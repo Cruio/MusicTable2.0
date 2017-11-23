@@ -46,6 +46,9 @@ namespace MusicTable2._0
             label6.Text = "Niveau 1";
 
             lvlUnlock = 1;
+
+            pictureBox7.Image = Properties.Resources.Lvl1Star1;
+
             if (lvlUnlock == 1)
             {
                 pictureBox8.Visible = true;
@@ -68,6 +71,8 @@ namespace MusicTable2._0
             label6.Text = "Niveau 2";
 
             lvlUnlock = 2;
+
+            pictureBox7.Image = Properties.Resources.Lvl2Star1;
 
             if (lvlUnlock == 2)
             {
@@ -92,6 +97,8 @@ namespace MusicTable2._0
 
             lvlUnlock = 3;
 
+            pictureBox7.Image = Properties.Resources.Lvl3Star1;
+
             if (lvlUnlock == 3)
             {
                 pictureBox8.Visible = false;
@@ -114,6 +121,8 @@ namespace MusicTable2._0
             label6.Text = "Niveau 4";
 
             lvlUnlock = 4;
+
+            pictureBox7.Image = Properties.Resources.Lvl4Star1;
 
             if (lvlUnlock == 4)
             {
