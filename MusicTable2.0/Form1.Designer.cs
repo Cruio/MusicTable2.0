@@ -37,7 +37,7 @@
             this.niveau3Label = new System.Windows.Forms.Label();
             this.niveau4Label = new System.Windows.Forms.Label();
             this.niveauerLabel = new System.Windows.Forms.Label();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.exitButton = new System.Windows.Forms.PictureBox();
             this.playButton = new System.Windows.Forms.PictureBox();
             this.showCurrentLevelLabel = new System.Windows.Forms.Label();
             this.showCurrentGameState = new System.Windows.Forms.PictureBox();
@@ -58,7 +58,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.niveau2Lock)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.niveau3Lock)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.niveau4Lock)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.exitButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.playButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.showCurrentGameState)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
@@ -195,18 +195,18 @@
             this.niveauerLabel.TabIndex = 8;
             this.niveauerLabel.Text = "Niveauer";
             // 
-            // pictureBox5
+            // exitButton
             // 
-            this.pictureBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox5.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox5.Image = global::MusicTable2._0.Properties.Resources.Door;
-            this.pictureBox5.Location = new System.Drawing.Point(1008, 493);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(111, 143);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox5.TabIndex = 9;
-            this.pictureBox5.TabStop = false;
+            this.exitButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.exitButton.BackColor = System.Drawing.Color.Transparent;
+            this.exitButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.exitButton.Image = global::MusicTable2._0.Properties.Resources.Door;
+            this.exitButton.Location = new System.Drawing.Point(1008, 493);
+            this.exitButton.Name = "exitButton";
+            this.exitButton.Size = new System.Drawing.Size(111, 143);
+            this.exitButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.exitButton.TabIndex = 9;
+            this.exitButton.TabStop = false;
             // 
             // playButton
             // 
@@ -412,7 +412,7 @@
             this.Controls.Add(this.showCurrentGameState);
             this.Controls.Add(this.showCurrentLevelLabel);
             this.Controls.Add(this.playButton);
-            this.Controls.Add(this.pictureBox5);
+            this.Controls.Add(this.exitButton);
             this.Controls.Add(this.niveauerLabel);
             this.Controls.Add(this.niveau4Label);
             this.Controls.Add(this.niveau3Label);
@@ -430,7 +430,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.niveau2Lock)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.niveau3Lock)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.niveau4Lock)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.exitButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.playButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.showCurrentGameState)).EndInit();
             this.flowLayoutPanel1.ResumeLayout(false);
@@ -470,7 +470,7 @@
 
 
         //lock label end
-        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.PictureBox exitButton;
 
 
         //playbutton
