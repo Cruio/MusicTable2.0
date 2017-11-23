@@ -80,18 +80,22 @@
             // 
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = global::MusicTable2._0.Properties.Resources.Lock;
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox1.Image = global::MusicTable2._0.Properties.Resources.Unlock;
             this.pictureBox1.Location = new System.Drawing.Point(1008, 49);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(111, 76);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // pictureBox2
             // 
             this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox2.Enabled = false;
             this.pictureBox2.Image = global::MusicTable2._0.Properties.Resources.Lock;
             this.pictureBox2.Location = new System.Drawing.Point(1008, 160);
             this.pictureBox2.Name = "pictureBox2";
@@ -99,11 +103,14 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 1;
             this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // pictureBox3
             // 
             this.pictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox3.Enabled = false;
             this.pictureBox3.Image = global::MusicTable2._0.Properties.Resources.Lock;
             this.pictureBox3.Location = new System.Drawing.Point(1008, 271);
             this.pictureBox3.Name = "pictureBox3";
@@ -111,11 +118,14 @@
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 2;
             this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
             // 
             // pictureBox4
             // 
             this.pictureBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox4.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox4.Enabled = false;
             this.pictureBox4.Image = global::MusicTable2._0.Properties.Resources.Lock;
             this.pictureBox4.Location = new System.Drawing.Point(1008, 382);
             this.pictureBox4.Name = "pictureBox4";
@@ -123,6 +133,7 @@
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox4.TabIndex = 3;
             this.pictureBox4.TabStop = false;
+            this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
             // 
             // label1
             // 
@@ -188,6 +199,7 @@
             // 
             this.pictureBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox5.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox5.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox5.Image = global::MusicTable2._0.Properties.Resources.Door;
             this.pictureBox5.Location = new System.Drawing.Point(1008, 493);
             this.pictureBox5.Name = "pictureBox5";
@@ -200,6 +212,7 @@
             // 
             this.pictureBox6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox6.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox6.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox6.Image = global::MusicTable2._0.Properties.Resources.Play;
             this.pictureBox6.Location = new System.Drawing.Point(852, 12);
             this.pictureBox6.Name = "pictureBox6";
@@ -207,6 +220,7 @@
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox6.TabIndex = 10;
             this.pictureBox6.TabStop = false;
+            this.pictureBox6.Click += new System.EventHandler(this.pictureBox6_Click);
             // 
             // label6
             // 
@@ -215,9 +229,10 @@
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(13, 13);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(135, 42);
+            this.label6.Size = new System.Drawing.Size(166, 42);
             this.label6.TabIndex = 11;
-            this.label6.Text = "Niveau";
+            this.label6.Text = "Niveau 1";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // pictureBox7
             // 
@@ -275,6 +290,7 @@
             // 
             // pictureBox10
             // 
+            this.pictureBox10.Enabled = false;
             this.pictureBox10.Image = global::MusicTable2._0.Properties.Resources.Star;
             this.pictureBox10.Location = new System.Drawing.Point(163, 3);
             this.pictureBox10.Name = "pictureBox10";
@@ -292,6 +308,7 @@
             this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox11.TabIndex = 3;
             this.pictureBox11.TabStop = false;
+            this.pictureBox11.Visible = false;
             // 
             // pictureBox12
             // 
@@ -302,9 +319,11 @@
             this.pictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox12.TabIndex = 4;
             this.pictureBox12.TabStop = false;
+            this.pictureBox12.Visible = false;
             // 
             // pictureBox13
             // 
+            this.pictureBox13.Enabled = false;
             this.pictureBox13.Image = global::MusicTable2._0.Properties.Resources.Star;
             this.pictureBox13.Location = new System.Drawing.Point(403, 3);
             this.pictureBox13.Name = "pictureBox13";
@@ -312,6 +331,7 @@
             this.pictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox13.TabIndex = 5;
             this.pictureBox13.TabStop = false;
+            this.pictureBox13.Visible = false;
             // 
             // pictureBox14
             // 
@@ -322,6 +342,7 @@
             this.pictureBox14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox14.TabIndex = 6;
             this.pictureBox14.TabStop = false;
+            this.pictureBox14.Visible = false;
             // 
             // pictureBox15
             // 
@@ -332,9 +353,11 @@
             this.pictureBox15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox15.TabIndex = 7;
             this.pictureBox15.TabStop = false;
+            this.pictureBox15.Visible = false;
             // 
             // pictureBox16
             // 
+            this.pictureBox16.Enabled = false;
             this.pictureBox16.Image = global::MusicTable2._0.Properties.Resources.Star;
             this.pictureBox16.Location = new System.Drawing.Point(643, 3);
             this.pictureBox16.Name = "pictureBox16";
@@ -342,6 +365,7 @@
             this.pictureBox16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox16.TabIndex = 8;
             this.pictureBox16.TabStop = false;
+            this.pictureBox16.Visible = false;
             // 
             // pictureBox17
             // 
@@ -352,6 +376,7 @@
             this.pictureBox17.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox17.TabIndex = 9;
             this.pictureBox17.TabStop = false;
+            this.pictureBox17.Visible = false;
             // 
             // pictureBox18
             // 
@@ -362,9 +387,11 @@
             this.pictureBox18.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox18.TabIndex = 10;
             this.pictureBox18.TabStop = false;
+            this.pictureBox18.Visible = false;
             // 
             // pictureBox19
             // 
+            this.pictureBox19.Enabled = false;
             this.pictureBox19.Image = global::MusicTable2._0.Properties.Resources.Star;
             this.pictureBox19.Location = new System.Drawing.Point(83, 73);
             this.pictureBox19.Name = "pictureBox19";
@@ -372,6 +399,7 @@
             this.pictureBox19.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox19.TabIndex = 11;
             this.pictureBox19.TabStop = false;
+            this.pictureBox19.Visible = false;
             // 
             // Form1
             // 
@@ -424,21 +452,30 @@
         }
 
         #endregion
-
+        //locks Start
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox4;
+        //lock end
+        //lock label start
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
+        //top label
         private System.Windows.Forms.Label label5;
+        //lock label end
         private System.Windows.Forms.PictureBox pictureBox5;
+        //playnutton
         private System.Windows.Forms.PictureBox pictureBox6;
+        //label that tell you what niveau you are in
         private System.Windows.Forms.Label label6;
+        //main game picturebox
         private System.Windows.Forms.PictureBox pictureBox7;
+        //layout that containe all stars
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        //Star pictures start
         private System.Windows.Forms.PictureBox pictureBox8;
         private System.Windows.Forms.PictureBox pictureBox9;
         private System.Windows.Forms.PictureBox pictureBox10;
@@ -451,6 +488,7 @@
         private System.Windows.Forms.PictureBox pictureBox17;
         private System.Windows.Forms.PictureBox pictureBox18;
         private System.Windows.Forms.PictureBox pictureBox19;
+        //Star pictures end
     }
 }
 
