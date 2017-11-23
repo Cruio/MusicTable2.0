@@ -24,7 +24,7 @@ namespace MusicTable2._0
 
  
         //UI contorl values
-        int lvlUnluck = 1;
+        int lvlUnlock = 1;
         int controlValue = 1;
      
 
@@ -45,8 +45,8 @@ namespace MusicTable2._0
         {
             label6.Text = "Niveau 1";
 
-            lvlUnluck = 1;
-            if (lvlUnluck == 1)
+            lvlUnlock = 1;
+            if (lvlUnlock == 1)
             {
                 pictureBox8.Visible = true;
                 pictureBox9.Visible = true;
@@ -67,9 +67,9 @@ namespace MusicTable2._0
         {
             label6.Text = "Niveau 2";
 
-            lvlUnluck = 2;
+            lvlUnlock = 2;
 
-            if (lvlUnluck == 2)
+            if (lvlUnlock == 2)
             {
                 pictureBox8.Visible = false;
                 pictureBox9.Visible = false;
@@ -90,9 +90,9 @@ namespace MusicTable2._0
         {
             label6.Text = "Niveau 3";
 
-            lvlUnluck = 3;
+            lvlUnlock = 3;
 
-            if (lvlUnluck == 3)
+            if (lvlUnlock == 3)
             {
                 pictureBox8.Visible = false;
                 pictureBox9.Visible = false;
@@ -113,9 +113,9 @@ namespace MusicTable2._0
         {
             label6.Text = "Niveau 4";
 
-            lvlUnluck = 4;
+            lvlUnlock = 4;
 
-            if (lvlUnluck == 4)
+            if (lvlUnlock == 4)
             {
                 pictureBox8.Visible = false;
                 pictureBox9.Visible = false;
@@ -285,6 +285,11 @@ namespace MusicTable2._0
                 
 
             }
+
+        }
+
+        private void pictureBox13_Click(object sender, EventArgs e)
+        {
 
         }
     }
