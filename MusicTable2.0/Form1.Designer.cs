@@ -405,7 +405,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::MusicTable2._0.Properties.Resources.backgroundyes;
+            this.BackgroundImage = global::MusicTable2._0.Properties.Resources.backgroundyesnonotes;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1131, 648);
             this.Controls.Add(this.flowLayoutPanel1);
