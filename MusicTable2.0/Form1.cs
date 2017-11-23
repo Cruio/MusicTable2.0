@@ -288,10 +288,7 @@ namespace MusicTable2._0
 
         }
 
-        private void pictureBox13_Click(object sender, EventArgs e)
-        {
 
-        }
     }
 
 

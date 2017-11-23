@@ -332,7 +332,6 @@
             this.pictureBox13.TabIndex = 5;
             this.pictureBox13.TabStop = false;
             this.pictureBox13.Visible = false;
-            this.pictureBox13.Click += new System.EventHandler(this.pictureBox13_Click);
             // 
             // pictureBox14
             // 
