@@ -36,9 +36,9 @@
             // 
             this.StartButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.StartButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.StartButton.Location = new System.Drawing.Point(286, 190);
+            this.StartButton.Location = new System.Drawing.Point(264, 117);
             this.StartButton.Name = "StartButton";
-            this.StartButton.Size = new System.Drawing.Size(140, 47);
+            this.StartButton.Size = new System.Drawing.Size(200, 75);
             this.StartButton.TabIndex = 0;
             this.StartButton.Text = "Start";
             this.StartButton.UseVisualStyleBackColor = true;
@@ -48,9 +48,9 @@
             // 
             this.AfslutButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.AfslutButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AfslutButton.Location = new System.Drawing.Point(286, 252);
+            this.AfslutButton.Location = new System.Drawing.Point(264, 314);
             this.AfslutButton.Name = "AfslutButton";
-            this.AfslutButton.Size = new System.Drawing.Size(140, 47);
+            this.AfslutButton.Size = new System.Drawing.Size(200, 75);
             this.AfslutButton.TabIndex = 1;
             this.AfslutButton.Text = "Afslut";
             this.AfslutButton.UseVisualStyleBackColor = true;
