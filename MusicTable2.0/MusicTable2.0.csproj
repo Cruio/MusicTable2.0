@@ -216,5 +216,35 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\W1.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\W1.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\W2.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\W3.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\W4.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\W5.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\W6.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\W7.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\W8.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\W9.wav" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

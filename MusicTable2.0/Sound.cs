@@ -37,39 +37,39 @@ namespace MusicTable2._0
             switch (pitch)
             {
                 case 1:
-                    pianist.SoundLocation = @"C:\Users\Anders\Documents\GitHub\MusicTable2.0\MusicTable2.0\Resources\wav\W1.wav";
+                    pianist.Stream = Properties.Resources.W1;
                     break;
-
+                        
                 case 2:
-                    pianist.SoundLocation = @"C:\Users\Anders\Documents\GitHub\MusicTable2.0\MusicTable2.0\Resources\wav\W2.wav";
+                    pianist.Stream = Properties.Resources.W2;
                     break;
 
                 case 3:
-                    pianist.SoundLocation = @"C:\Users\Anders\Documents\GitHub\MusicTable2.0\MusicTable2.0\Resources\wav\W3.wav";
+                    pianist.Stream = Properties.Resources.W3;
                     break;
 
                 case 4:
-                    pianist.SoundLocation = @"C:\Users\Anders\Documents\GitHub\MusicTable2.0\MusicTable2.0\Resources\wav\W4.wav";
+                    pianist.Stream = Properties.Resources.W4;
                     break;
 
                 case 5:
-                    pianist.SoundLocation = @"C:\Users\Anders\Documents\GitHub\MusicTable2.0\MusicTable2.0\Resources\wav\W5.wav";
+                    pianist.Stream = Properties.Resources.W5;
                     break;
 
                 case 6:
-                    pianist.SoundLocation = @"C:\Users\Anders\Documents\GitHub\MusicTable2.0\MusicTable2.0\Resources\wav\W6.wav";
+                    pianist.Stream = Properties.Resources.W6;
                     break;
 
                 case 7:
-                    pianist.SoundLocation = @"C:\Users\Anders\Documents\GitHub\MusicTable2.0\MusicTable2.0\Resources\wav\W7.wav";
+                    pianist.Stream = Properties.Resources.W7;
                     break;
 
                 case 8:
-                    pianist.SoundLocation = @"C:\Users\Anders\Documents\GitHub\MusicTable2.0\MusicTable2.0\Resources\wav\W8.wav";
+                    pianist.Stream = Properties.Resources.W8;
                     break;
 
                 case 9:
-                    pianist.SoundLocation = @"C:\Users\Anders\Documents\GitHub\MusicTable2.0\MusicTable2.0\Resources\wav\W9.wav";
+                    pianist.Stream = Properties.Resources.W9;
                     break;
             }
 
