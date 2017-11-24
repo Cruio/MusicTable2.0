@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MusicTable2._0
+namespace Start
 {
     static class Program
     {
@@ -16,9 +16,7 @@ namespace MusicTable2._0
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new StartScreen());
-            
-
+            Application.Run(new Form1());
         }
     }
 }

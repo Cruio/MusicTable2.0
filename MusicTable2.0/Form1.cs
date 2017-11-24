@@ -15,11 +15,12 @@ namespace MusicTable2._0
         public Form1()
         {
             InitializeComponent();
+            this.WindowState = FormWindowState.Maximized;
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-        
+           
         }
 
  
@@ -296,8 +297,11 @@ namespace MusicTable2._0
             }
 
         }
-
-       
+        // the exit door button thing.
+        private void exitButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 
 

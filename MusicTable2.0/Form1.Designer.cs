@@ -207,6 +207,7 @@
             this.exitButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.exitButton.TabIndex = 9;
             this.exitButton.TabStop = false;
+            this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
             // 
             // playButton
             // 
