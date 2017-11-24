@@ -7,6 +7,7 @@ using System.Drawing;
 using Emgu.CV;
 using Emgu.CV.CvEnum;
 using Emgu.CV.Structure;
+using System.Windows.Forms;
 using Emgu.CV.XImgproc;
 using Emgu.CV.XObjdetect;
 using Emgu.CV.Features2D;
@@ -18,12 +19,12 @@ namespace MusicTable2._0
 {
     class Detector
     {
-        private Mat capture = new Mat();
-        Mat invertedCapture = new Mat();
-        Mat captureWithKeypoints = new Mat();
-        private SimpleBlobDetector detector = new SimpleBlobDetector();
+        private Mat capture;
+        Mat invertedCapture;
+        Mat captureWithKeypoints;
+        private SimpleBlobDetector detector;
         private VectorOfVectorOfPoint contours;
-        private Mat hierarchy = new Mat();
+        private Mat hierarchy;
         private bool[] hasChild;
         private int[] noteType;
         private int noteAmount;
@@ -31,7 +32,8 @@ namespace MusicTable2._0
        
         public int Looper()
         {
-            VideoCapture cap = new VideoCapture(0);
+            
+            VideoCapture cap = new VideoCapture();
             int counter = 0;
             Size size = new Size(3,3);
             Point point = new Point(1, 1);

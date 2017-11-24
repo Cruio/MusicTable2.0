@@ -4,6 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Media;
+using MusicTable2._0;
+
 
 namespace MusicTable2._0
 {
@@ -32,8 +34,9 @@ namespace MusicTable2._0
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new StartScreen());
-            
 
+            Detector detector = new Detector();
+            detector.Looper();
         }
     }
 }
