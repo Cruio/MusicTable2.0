@@ -76,25 +76,7 @@ namespace MusicTable2._0
         {
             showCurrentLevelLabel.Text = "Niveau 1";
 
-            lvlUnlock = 1;
-
-            showCurrentGameState.Image = Properties.Resources.Lvl1Star1;
-
-            if (lvlUnlock == 1)
-            {
-                star1Level1.Visible = true;
-                star2Level1.Visible = true;
-                star3Level1.Visible = true;
-                star1Level2.Visible = false;
-                star2Level2.Visible = false;
-                star3Level2.Visible = false;
-                star1Level3.Visible = false;
-                star2Level3.Visible = false;
-                star3Level3.Visible = false;
-                star1Level4.Visible = false;
-                star2Level4.Visible = false;
-                star3Level4.Visible = false;
-            }
+             NiveauSelect(1); 
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
@@ -103,23 +85,7 @@ namespace MusicTable2._0
 
             lvlUnlock = 2;
 
-            showCurrentGameState.Image = Properties.Resources.Lvl2Star1;
-
-            if (lvlUnlock == 2)
-            {
-                star1Level1.Visible = false;
-                star2Level1.Visible = false;
-                star3Level1.Visible = false;
-                star1Level2.Visible = true;
-                star2Level2.Visible = true;
-                star3Level2.Visible = true;
-                star1Level3.Visible = false;
-                star2Level3.Visible = false;
-                star3Level3.Visible = false;
-                star1Level4.Visible = false;
-                star2Level4.Visible = false;
-                star3Level4.Visible = false;
-            }
+             NiveauSelect(2);
         }
 
         private void pictureBox3_Click(object sender, EventArgs e)
@@ -128,48 +94,15 @@ namespace MusicTable2._0
 
             lvlUnlock = 3;
 
-            showCurrentGameState.Image = Properties.Resources.Lvl3Star1;
-
-            if (lvlUnlock == 3)
-            {
-                star1Level1.Visible = false;
-                star2Level1.Visible = false;
-                star3Level1.Visible = false;
-                star1Level2.Visible = false;
-                star2Level2.Visible = false;
-                star3Level2.Visible = false;
-                star1Level3.Visible = true;
-                star2Level3.Visible = true;
-                star3Level3.Visible = true;
-                star1Level4.Visible = false;
-                star2Level4.Visible = false;
-                star3Level4.Visible = false;
-            }
+            NiveauSelect(3);
         }
         
         private void pictureBox4_Click(object sender, EventArgs e)
         {
             showCurrentLevelLabel.Text = "Niveau 4";
 
-            lvlUnlock = 4;
-
-            showCurrentGameState.Image = Properties.Resources.Lvl4Star1;
-
-            if (lvlUnlock == 4)
-            {
-                star1Level1.Visible = false;
-                star2Level1.Visible = false;
-                star3Level1.Visible = false;
-                star1Level2.Visible = false;
-                star2Level2.Visible = false;
-                star3Level2.Visible = false;
-                star1Level3.Visible = false;
-                star2Level3.Visible = false;
-                star3Level3.Visible = false;
-                star1Level4.Visible = true;
-                star2Level4.Visible = true;
-                star3Level4.Visible = true;
-            }
+            NiveauSelect(4);
+            
         }
         // Lock click event End
 
@@ -178,37 +111,14 @@ namespace MusicTable2._0
         //this is the over all control function of the UI
         void StarControl()
         {
-            // makes 4 random int for controling where the note will spawn on a row
-            Random rnd = new Random();
-            int randomRow = rnd.Next(0, 8);
-            int randomRow2 = rnd.Next(0, 8);
-            int randomRow3 = rnd.Next(0, 8);
-            int randomRow4 = rnd.Next(0, 8);
-            
 
             if (controlValue == 1)
             {
                 //fills in the stars
                 star1Level1.Image = Properties.Resources.StarYellow;
-                
-                //hide and show the stars that needs to be shown 
-                star1Level1.Visible = true;
-                star2Level1.Visible = true;
-                star3Level1.Visible = true;
-                star1Level2.Visible = false;
-                star2Level2.Visible = false;
-                star3Level2.Visible = false;
-                star1Level3.Visible = false;
-                star2Level3.Visible = false;
-                star3Level3.Visible = false;
-                star1Level4.Visible = false;
-                star2Level4.Visible = false;
-                star3Level4.Visible = false;
-
+               
                 //new random note location 
-                noteBox.Location = new Point(collum[0], row[randomRow]);
-
-
+                NiveauSelect(1);
             }
             if (controlValue == 2)
             {
@@ -216,8 +126,7 @@ namespace MusicTable2._0
                 star2Level1.Image = Properties.Resources.StarYellow;
 
                 //new random note location 
-                noteBox.Location = new Point(collum[0], row[randomRow]);
-
+                NiveauSelect(1);
             }
             if (controlValue == 3)
             {
@@ -250,20 +159,10 @@ namespace MusicTable2._0
                 star3Level3.Visible = false;
                 star1Level4.Visible = false;
                 star2Level4.Visible = false;
-                star3Level4.Visible = false;
-
-                //hides the note from first lvl
-                noteBox.Visible = false;
-
-                //show the notes for the second lvl
-                noteBox2.Visible = true;
-                noteBox22.Visible = true;
+                star3Level4.Visible = false;        
 
                 //new random note location  
-                noteBox2.Location = new Point(collum[0] + 20, row[randomRow] - 137);
-                System.Threading.Thread.Sleep(150);
-                noteBox22.Location = new Point(collum[2] + 20, row[randomRow2] - 137);
-
+                NiveauSelect(2);
             }
             if (controlValue == 4)
             {
@@ -271,9 +170,7 @@ namespace MusicTable2._0
                 star1Level2.Image = Properties.Resources.StarYellow;
 
                 // new random note location 
-                noteBox2.Location = new Point(collum[0] + 20, row[randomRow] - 137);
-                System.Threading.Thread.Sleep(150);
-                noteBox22.Location = new Point(collum[2] + 20, row[randomRow2] - 137);
+                NiveauSelect(2);
             }
             if (controlValue == 5)
             {
@@ -281,9 +178,7 @@ namespace MusicTable2._0
                 star2Level2.Image = Properties.Resources.StarYellow;
 
                 //new random note location 
-                noteBox2.Location = new Point(collum[0] + 20, row[randomRow] - 137);
-                System.Threading.Thread.Sleep(150);
-                noteBox22.Location = new Point(collum[2] + 20, row[randomRow2] - 137);
+                NiveauSelect(2);
 
             }
             if (controlValue == 6)
@@ -318,24 +213,8 @@ namespace MusicTable2._0
                 star2Level4.Visible = false;
                 star3Level4.Visible = false;
 
-                //hides the notes for the second lvl
-                noteBox2.Visible = false;
-                noteBox22.Visible = false;
-
-                //show the notes for the third lvl
-                noteBox3.Visible = true;
-                noteBox32.Visible = true;
-                noteBox33.Visible = true;
-                noteBox34.Visible = true;
-
                 //new random note location 
-                noteBox3.Location = new Point(collum[0] + 20, row[randomRow] - 133);
-                System.Threading.Thread.Sleep(150);
-                noteBox32.Location = new Point(collum[1] + 20, row[randomRow2] - 133);
-                System.Threading.Thread.Sleep(150);
-                noteBox33.Location = new Point(collum[2] + 20, row[randomRow3] - 133);
-                System.Threading.Thread.Sleep(150);
-                noteBox34.Location = new Point(collum[3] + 20, row[randomRow4] - 133);
+                NiveauSelect(3);
             }
             if (controlValue == 7)
             {
@@ -343,15 +222,7 @@ namespace MusicTable2._0
                 star1Level3.Image = Properties.Resources.StarYellow;
 
                 //new random note location 
-                noteBox3.Location = new Point(collum[0] + 20, row[randomRow] - 133);
-                System.Threading.Thread.Sleep(150);
-                noteBox32.Location = new Point(collum[1] + 20, row[randomRow2] - 133);
-                System.Threading.Thread.Sleep(150);
-                noteBox33.Location = new Point(collum[2] + 20, row[randomRow3] - 133);
-                System.Threading.Thread.Sleep(150);
-                noteBox34.Location = new Point(collum[3] + 20, row[randomRow4] - 133);
-
-
+                NiveauSelect(3);
             }
             if (controlValue == 8)
             {
@@ -359,15 +230,7 @@ namespace MusicTable2._0
                 star2Level3.Image = Properties.Resources.StarYellow;
 
                 //new random note location 
-                noteBox3.Location = new Point(collum[0] + 20, row[randomRow] - 133);
-                System.Threading.Thread.Sleep(150);
-                noteBox32.Location = new Point(collum[1] + 20, row[randomRow2] - 133);
-                System.Threading.Thread.Sleep(150);
-                noteBox33.Location = new Point(collum[2] + 20, row[randomRow3] - 133);
-                System.Threading.Thread.Sleep(150);
-                noteBox34.Location = new Point(collum[3] + 20, row[randomRow4] - 133);
-
-
+                NiveauSelect(3);
             }
             if (controlValue == 9)
             {
@@ -401,27 +264,8 @@ namespace MusicTable2._0
                 star2Level4.Visible = true;
                 star3Level4.Visible = true;
 
-                //hides the notes for the thrid lvl
-                noteBox3.Visible = false;
-                noteBox32.Visible = false;
-                noteBox33.Visible = false;
-                noteBox34.Visible = false;
-
-                //show the notes for the fourth lvl
-                noteBox4.Visible = true;
-                noteBox42.Visible = true;
-                noteBox43.Visible = true;
-                noteBox44.Visible = true;
-
                 //new random note location 
-                noteBox4.Location = new Point(collum[0] + 25, row[randomRow] - 133);
-                System.Threading.Thread.Sleep(150);
-                noteBox42.Location = new Point(collum[1] + 25, row[randomRow2] - 133);
-                System.Threading.Thread.Sleep(150);
-                noteBox43.Location = new Point(collum[2] + 25, row[randomRow3] - 133);
-                System.Threading.Thread.Sleep(150);
-                noteBox44.Location = new Point(collum[3] + 25, row[randomRow4] - 133);
-
+                NiveauSelect(4);
             }
             if (controlValue == 10)
             {
@@ -429,13 +273,7 @@ namespace MusicTable2._0
                 star1Level4.Image = Properties.Resources.StarYellow;
 
                 //new random note location 
-                noteBox4.Location = new Point(collum[0] + 25, row[randomRow] - 133);
-                System.Threading.Thread.Sleep(150);
-                noteBox42.Location = new Point(collum[1] + 25, row[randomRow2] - 133);
-                System.Threading.Thread.Sleep(150);
-                noteBox43.Location = new Point(collum[2] + 25, row[randomRow3] - 133);
-                System.Threading.Thread.Sleep(150);
-                noteBox44.Location = new Point(collum[3] + 25, row[randomRow4] - 133);
+                NiveauSelect(4);
             }
             if (controlValue == 11)
             {
@@ -443,6 +281,194 @@ namespace MusicTable2._0
                 star2Level4.Image = Properties.Resources.StarYellow;
 
                 //new random note location 
+                NiveauSelect(4);
+            }
+            if (controlValue == 12)
+            {
+                //fills in the stars
+                star3Level4.Image = Properties.Resources.StarYellow;
+
+                //hide the notes for the fourth lvl
+                noteBox4.Visible = false;
+                noteBox42.Visible = false;
+                noteBox43.Visible = false;
+                noteBox44.Visible = false;
+            }
+
+        }
+        // the exit door button thing.
+        private void exitButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        //the lvl select function
+        void NiveauSelect(int setLvl)
+        {
+            // makes 4 random int for controling where the note will spawn on a row
+            Random rnd = new Random();
+            int randomRow = rnd.Next(0, 8);
+            int randomRow2 = rnd.Next(0, 8);
+            int randomRow3 = rnd.Next(0, 8);
+            int randomRow4 = rnd.Next(0, 8);
+
+
+            if (setLvl == 1)
+            {
+                ////show the notes for the first lvl
+                noteBox.Visible = true;
+
+                //hides the note from second lvl
+                noteBox2.Visible = false;
+                noteBox22.Visible = false;
+
+                //hides the notes for the thrid lvl
+                noteBox3.Visible = false;
+                noteBox32.Visible = false;
+                noteBox33.Visible = false;
+                noteBox34.Visible = false;
+
+                //hide the notes for the fourth lvl
+                noteBox4.Visible = false;
+                noteBox42.Visible = false;
+                noteBox43.Visible = false;
+                noteBox44.Visible = false;
+
+                //hide and show the stars that needs to be shown 
+                star1Level1.Visible = true;
+                star2Level1.Visible = true;
+                star3Level1.Visible = true;
+                star1Level2.Visible = false;
+                star2Level2.Visible = false;
+                star3Level2.Visible = false;
+                star1Level3.Visible = false;
+                star2Level3.Visible = false;
+                star3Level3.Visible = false;
+                star1Level4.Visible = false;
+                star2Level4.Visible = false;
+                star3Level4.Visible = false;
+
+                noteBox.Location = new Point(collum[0], row[randomRow]);
+
+            }
+            if (setLvl == 2)
+            {
+                ////hide the notes for the first lvl
+                noteBox.Visible = false;
+
+                //hides the note from second lvl
+                noteBox2.Visible = true;
+                noteBox22.Visible = true;
+
+                //hides the notes for the thrid lvl
+                noteBox3.Visible = false;
+                noteBox32.Visible = false;
+                noteBox33.Visible = false;
+                noteBox34.Visible = false;
+
+                //hide the notes for the fourth lvl
+                noteBox4.Visible = false;
+                noteBox42.Visible = false;
+                noteBox43.Visible = false;
+                noteBox44.Visible = false;
+
+                //hide and show the stars that needs to be shown 
+                star1Level1.Visible = false;
+                star2Level1.Visible = false;
+                star3Level1.Visible = false;
+                star1Level2.Visible = true;
+                star2Level2.Visible = true;
+                star3Level2.Visible = true;
+                star1Level3.Visible = false;
+                star2Level3.Visible = false;
+                star3Level3.Visible = false;
+                star1Level4.Visible = false;
+                star2Level4.Visible = false;
+                star3Level4.Visible = false;
+
+
+                noteBox2.Location = new Point(collum[0] + 20, row[randomRow] - 137);
+                System.Threading.Thread.Sleep(150);
+                noteBox22.Location = new Point(collum[2] + 20, row[randomRow2] - 137);
+            }
+            if (setLvl == 3)
+            {
+                ////hide the notes for the first lvl
+                noteBox.Visible = false;
+
+                //hides the note from second lvl
+                noteBox2.Visible = false;
+                noteBox22.Visible = false;
+
+                //show the notes for the thrid lvl
+                noteBox3.Visible = true;
+                noteBox32.Visible = true;
+                noteBox33.Visible = true;
+                noteBox34.Visible = true;
+
+                //hide the notes for the fourth lvl
+                noteBox4.Visible = false;
+                noteBox42.Visible = false;
+                noteBox43.Visible = false;
+                noteBox44.Visible = false;
+
+                //hide and show the stars that needs to be shown 
+                star1Level1.Visible = false;
+                star2Level1.Visible = false;
+                star3Level1.Visible = false;
+                star1Level2.Visible = false;
+                star2Level2.Visible = false;
+                star3Level2.Visible = false;
+                star1Level3.Visible = true;
+                star2Level3.Visible = true;
+                star3Level3.Visible = true;
+                star1Level4.Visible = false;
+                star2Level4.Visible = false;
+                star3Level4.Visible = false;
+
+                noteBox3.Location = new Point(collum[0] + 20, row[randomRow] - 133);
+                System.Threading.Thread.Sleep(150);
+                noteBox32.Location = new Point(collum[1] + 20, row[randomRow2] - 133);
+                System.Threading.Thread.Sleep(150);
+                noteBox33.Location = new Point(collum[2] + 20, row[randomRow3] - 133);
+                System.Threading.Thread.Sleep(150);
+                noteBox34.Location = new Point(collum[3] + 20, row[randomRow4] - 133);
+            }
+            if (setLvl == 4)
+            {
+                ////hide the notes for the first lvl
+                noteBox.Visible = false;
+
+                //hides the note from second lvl
+                noteBox2.Visible = false;
+                noteBox22.Visible = false;
+
+                //hides the notes for the thrid lvl
+                noteBox3.Visible = false;
+                noteBox32.Visible = false;
+                noteBox33.Visible = false;
+                noteBox34.Visible = false;
+
+                //hide the notes for the fourth lvl
+                noteBox4.Visible = true;
+                noteBox42.Visible = true;
+                noteBox43.Visible = true;
+                noteBox44.Visible = true;
+
+                //hide and show the stars that needs to be shown 
+                star1Level1.Visible = false;
+                star2Level1.Visible = false;
+                star3Level1.Visible = false;
+                star1Level2.Visible = false;
+                star2Level2.Visible = false;
+                star3Level2.Visible = false;
+                star1Level3.Visible = false;
+                star2Level3.Visible = false;
+                star3Level3.Visible = false;
+                star1Level4.Visible = true;
+                star2Level4.Visible = true;
+                star3Level4.Visible = true;
+
                 noteBox4.Location = new Point(collum[0] + 25, row[randomRow] - 133);
                 System.Threading.Thread.Sleep(150);
                 noteBox42.Location = new Point(collum[1] + 25, row[randomRow2] - 133);
@@ -451,19 +477,8 @@ namespace MusicTable2._0
                 System.Threading.Thread.Sleep(150);
                 noteBox44.Location = new Point(collum[3] + 25, row[randomRow4] - 133);
             }
-            if (controlValue == 12)
-            {
-                //fills in the stars
-                star3Level4.Image = Properties.Resources.StarYellow;
-                
 
-            }
 
-        }
-        // the exit door button thing.
-        private void exitButton_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
     }
 
