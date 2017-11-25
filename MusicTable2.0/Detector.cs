@@ -33,7 +33,7 @@ namespace MusicTable2._0
         public int Looper()
         {
             
-            VideoCapture cap = new VideoCapture();
+            VideoCapture cap = new VideoCapture(0);
             int counter = 0;
             Size size = new Size(3, 3);
             Point point = new Point(1, 1);

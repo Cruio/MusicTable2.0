@@ -56,16 +56,6 @@
             this.star3Level4 = new System.Windows.Forms.PictureBox();
             this.noteBox = new System.Windows.Forms.PictureBox();
             this.showCurrentGameState = new System.Windows.Forms.PictureBox();
-            this.noteBox2 = new System.Windows.Forms.PictureBox();
-            this.noteBox22 = new System.Windows.Forms.PictureBox();
-            this.noteBox3 = new System.Windows.Forms.PictureBox();
-            this.noteBox34 = new System.Windows.Forms.PictureBox();
-            this.noteBox33 = new System.Windows.Forms.PictureBox();
-            this.noteBox32 = new System.Windows.Forms.PictureBox();
-            this.noteBox4 = new System.Windows.Forms.PictureBox();
-            this.noteBox42 = new System.Windows.Forms.PictureBox();
-            this.noteBox43 = new System.Windows.Forms.PictureBox();
-            this.noteBox44 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.niveau1Lock)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.niveau2Lock)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.niveau3Lock)).BeginInit();
@@ -87,16 +77,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.star3Level4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.noteBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.showCurrentGameState)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.noteBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.noteBox22)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.noteBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.noteBox34)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.noteBox33)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.noteBox32)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.noteBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.noteBox42)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.noteBox43)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.noteBox44)).BeginInit();
             this.SuspendLayout();
             // 
             // niveau1Lock
@@ -416,11 +396,11 @@
             this.noteBox.BackColor = System.Drawing.Color.Transparent;
             this.noteBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.noteBox.Image = ((System.Drawing.Image)(resources.GetObject("noteBox.Image")));
-            this.noteBox.Location = new System.Drawing.Point(16, 160);
-            this.noteBox.Margin = new System.Windows.Forms.Padding(2);
+            this.noteBox.Location = new System.Drawing.Point(611, 370);
+            this.noteBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.noteBox.Name = "noteBox";
-            this.noteBox.Size = new System.Drawing.Size(179, 64);
-            this.noteBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.noteBox.Size = new System.Drawing.Size(75, 41);
+            this.noteBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.noteBox.TabIndex = 14;
             this.noteBox.TabStop = false;
             // 
@@ -429,144 +409,15 @@
             this.showCurrentGameState.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.showCurrentGameState.BackColor = System.Drawing.Color.Transparent;
             this.showCurrentGameState.Image = ((System.Drawing.Image)(resources.GetObject("showCurrentGameState.Image")));
             this.showCurrentGameState.Location = new System.Drawing.Point(14, 154);
-            this.showCurrentGameState.Margin = new System.Windows.Forms.Padding(2);
+            this.showCurrentGameState.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.showCurrentGameState.Name = "showCurrentGameState";
             this.showCurrentGameState.Size = new System.Drawing.Size(988, 482);
             this.showCurrentGameState.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.showCurrentGameState.TabIndex = 15;
             this.showCurrentGameState.TabStop = false;
-            // 
-            // noteBox2
-            // 
-            this.noteBox2.BackColor = System.Drawing.Color.Transparent;
-            this.noteBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.noteBox2.Image = ((System.Drawing.Image)(resources.GetObject("noteBox2.Image")));
-            this.noteBox2.Location = new System.Drawing.Point(200, 160);
-            this.noteBox2.Name = "noteBox2";
-            this.noteBox2.Size = new System.Drawing.Size(129, 262);
-            this.noteBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.noteBox2.TabIndex = 16;
-            this.noteBox2.TabStop = false;
-            this.noteBox2.Visible = false;
-            // 
-            // noteBox22
-            // 
-            this.noteBox22.BackColor = System.Drawing.Color.Transparent;
-            this.noteBox22.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.noteBox22.Image = ((System.Drawing.Image)(resources.GetObject("noteBox22.Image")));
-            this.noteBox22.Location = new System.Drawing.Point(335, 160);
-            this.noteBox22.Name = "noteBox22";
-            this.noteBox22.Size = new System.Drawing.Size(129, 262);
-            this.noteBox22.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.noteBox22.TabIndex = 17;
-            this.noteBox22.TabStop = false;
-            this.noteBox22.Visible = false;
-            // 
-            // noteBox3
-            // 
-            this.noteBox3.BackColor = System.Drawing.Color.Transparent;
-            this.noteBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.noteBox3.Image = ((System.Drawing.Image)(resources.GetObject("noteBox3.Image")));
-            this.noteBox3.Location = new System.Drawing.Point(470, 160);
-            this.noteBox3.Name = "noteBox3";
-            this.noteBox3.Size = new System.Drawing.Size(129, 262);
-            this.noteBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.noteBox3.TabIndex = 18;
-            this.noteBox3.TabStop = false;
-            this.noteBox3.Visible = false;
-            // 
-            // noteBox34
-            // 
-            this.noteBox34.BackColor = System.Drawing.Color.Transparent;
-            this.noteBox34.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.noteBox34.Image = ((System.Drawing.Image)(resources.GetObject("noteBox34.Image")));
-            this.noteBox34.Location = new System.Drawing.Point(875, 160);
-            this.noteBox34.Name = "noteBox34";
-            this.noteBox34.Size = new System.Drawing.Size(129, 262);
-            this.noteBox34.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.noteBox34.TabIndex = 19;
-            this.noteBox34.TabStop = false;
-            this.noteBox34.Visible = false;
-            // 
-            // noteBox33
-            // 
-            this.noteBox33.BackColor = System.Drawing.Color.Transparent;
-            this.noteBox33.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.noteBox33.Image = ((System.Drawing.Image)(resources.GetObject("noteBox33.Image")));
-            this.noteBox33.Location = new System.Drawing.Point(740, 160);
-            this.noteBox33.Name = "noteBox33";
-            this.noteBox33.Size = new System.Drawing.Size(129, 262);
-            this.noteBox33.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.noteBox33.TabIndex = 20;
-            this.noteBox33.TabStop = false;
-            this.noteBox33.Visible = false;
-            // 
-            // noteBox32
-            // 
-            this.noteBox32.BackColor = System.Drawing.Color.Transparent;
-            this.noteBox32.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.noteBox32.Image = ((System.Drawing.Image)(resources.GetObject("noteBox32.Image")));
-            this.noteBox32.Location = new System.Drawing.Point(605, 160);
-            this.noteBox32.Name = "noteBox32";
-            this.noteBox32.Size = new System.Drawing.Size(129, 262);
-            this.noteBox32.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.noteBox32.TabIndex = 21;
-            this.noteBox32.TabStop = false;
-            this.noteBox32.Visible = false;
-            // 
-            // noteBox4
-            // 
-            this.noteBox4.BackColor = System.Drawing.Color.Transparent;
-            this.noteBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.noteBox4.Image = ((System.Drawing.Image)(resources.GetObject("noteBox4.Image")));
-            this.noteBox4.Location = new System.Drawing.Point(20, 363);
-            this.noteBox4.Name = "noteBox4";
-            this.noteBox4.Size = new System.Drawing.Size(174, 263);
-            this.noteBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.noteBox4.TabIndex = 22;
-            this.noteBox4.TabStop = false;
-            this.noteBox4.Visible = false;
-            // 
-            // noteBox42
-            // 
-            this.noteBox42.BackColor = System.Drawing.Color.Transparent;
-            this.noteBox42.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.noteBox42.Image = ((System.Drawing.Image)(resources.GetObject("noteBox42.Image")));
-            this.noteBox42.Location = new System.Drawing.Point(200, 363);
-            this.noteBox42.Name = "noteBox42";
-            this.noteBox42.Size = new System.Drawing.Size(174, 263);
-            this.noteBox42.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.noteBox42.TabIndex = 23;
-            this.noteBox42.TabStop = false;
-            this.noteBox42.Visible = false;
-            // 
-            // noteBox43
-            // 
-            this.noteBox43.BackColor = System.Drawing.Color.Transparent;
-            this.noteBox43.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.noteBox43.Image = ((System.Drawing.Image)(resources.GetObject("noteBox43.Image")));
-            this.noteBox43.Location = new System.Drawing.Point(380, 363);
-            this.noteBox43.Name = "noteBox43";
-            this.noteBox43.Size = new System.Drawing.Size(174, 263);
-            this.noteBox43.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.noteBox43.TabIndex = 24;
-            this.noteBox43.TabStop = false;
-            this.noteBox43.Visible = false;
-            // 
-            // noteBox44
-            // 
-            this.noteBox44.BackColor = System.Drawing.Color.Transparent;
-            this.noteBox44.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.noteBox44.Image = ((System.Drawing.Image)(resources.GetObject("noteBox44.Image")));
-            this.noteBox44.Location = new System.Drawing.Point(560, 363);
-            this.noteBox44.Name = "noteBox44";
-            this.noteBox44.Size = new System.Drawing.Size(174, 263);
-            this.noteBox44.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.noteBox44.TabIndex = 25;
-            this.noteBox44.TabStop = false;
-            this.noteBox44.Visible = false;
             // 
             // Form1
             // 
@@ -575,16 +426,6 @@
             this.BackgroundImage = global::MusicTable2._0.Properties.Resources.backgroundyesnonotes;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1131, 648);
-            this.Controls.Add(this.noteBox44);
-            this.Controls.Add(this.noteBox43);
-            this.Controls.Add(this.noteBox42);
-            this.Controls.Add(this.noteBox4);
-            this.Controls.Add(this.noteBox32);
-            this.Controls.Add(this.noteBox33);
-            this.Controls.Add(this.noteBox34);
-            this.Controls.Add(this.noteBox3);
-            this.Controls.Add(this.noteBox22);
-            this.Controls.Add(this.noteBox2);
             this.Controls.Add(this.noteBox);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.showCurrentLevelLabel);
@@ -625,16 +466,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.star3Level4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.noteBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.showCurrentGameState)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.noteBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.noteBox22)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.noteBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.noteBox34)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.noteBox33)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.noteBox32)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.noteBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.noteBox42)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.noteBox43)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.noteBox44)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -690,16 +521,6 @@
         private System.Windows.Forms.PictureBox star3Level4;
         private System.Windows.Forms.PictureBox noteBox;
         private System.Windows.Forms.PictureBox showCurrentGameState;
-        private System.Windows.Forms.PictureBox noteBox2;
-        private System.Windows.Forms.PictureBox noteBox22;
-        private System.Windows.Forms.PictureBox noteBox3;
-        private System.Windows.Forms.PictureBox noteBox34;
-        private System.Windows.Forms.PictureBox noteBox33;
-        private System.Windows.Forms.PictureBox noteBox32;
-        private System.Windows.Forms.PictureBox noteBox4;
-        private System.Windows.Forms.PictureBox noteBox42;
-        private System.Windows.Forms.PictureBox noteBox43;
-        private System.Windows.Forms.PictureBox noteBox44;
         //Star pictures end
     }
 }
