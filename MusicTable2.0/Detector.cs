@@ -28,17 +28,17 @@ namespace MusicTable2._0
         private bool[] hasChild;
         private int[] noteType;
         private int noteAmount;
-        public int[,] notePositions = new int[4,9];
-       
+        public int[,] notePositions = new int[4, 9];
+
         public int Looper()
         {
             
             VideoCapture cap = new VideoCapture(0);
             int counter = 0;
-            Size size = new Size(3,3);
+            Size size = new Size(3, 3);
             Point point = new Point(1, 1);
             MCvScalar scalar = new MCvScalar(1);
-            while(true)
+            while (true)
             {
                 cap.Read(capture);
                 CvInvoke.MedianBlur(capture, capture, 3);
@@ -52,7 +52,7 @@ namespace MusicTable2._0
                 CvInvoke.BitwiseNot(capture, invertedCapture);
                 VectorOfKeyPoint keyPoints = new VectorOfKeyPoint(detector.Detect(invertedCapture));
                 Features2DToolbox.DrawKeypoints(invertedCapture, keyPoints, captureWithKeypoints, new Bgr(255, 0, 0));
-                for(int i = 0; i < keyPoints.Size; i++)
+                for (int i = 0; i < keyPoints.Size; i++)
                 {
                     int x;
                     int y;
@@ -127,7 +127,7 @@ namespace MusicTable2._0
                 }
             }
             VectorOfKeyPoint keyPoints = new VectorOfKeyPoint(detector.Detect(capture));
-            for(int i = 0; i < keyPoints.Size; i++)
+            for (int i = 0; i < keyPoints.Size; i++)
             {
                 int x = (int)keyPoints[i].Point.X;
                 int y = (int)keyPoints[i].Point.Y;
@@ -145,7 +145,7 @@ namespace MusicTable2._0
                         {
                             if (x > firstX && x < firstX + line && y > firstY && y < firstY + colWidth)
                             {
-                               
+
                             }
                             firstX += line;
                         }
@@ -153,7 +153,7 @@ namespace MusicTable2._0
                         {
                             if (x > firstX && x < firstX + space && y > firstY && y < firstY + colWidth && rows % 2 != 0)
                             {
-                               
+
                             }
                             firstX += space;
                         }
@@ -166,5 +166,5 @@ namespace MusicTable2._0
             }
         }
     }
-    
+
 }
