@@ -673,8 +673,12 @@
         private System.Windows.Forms.PictureBox star1Level4;
         private System.Windows.Forms.PictureBox star2Level4;
         private System.Windows.Forms.PictureBox star3Level4;
-        private System.Windows.Forms.PictureBox noteBox;
+
+        // showCurrentGameState pictureBox
         private System.Windows.Forms.PictureBox showCurrentGameState;
+
+        //all then note Picture
+        private System.Windows.Forms.PictureBox noteBox;
         private System.Windows.Forms.PictureBox noteBox2;
         private System.Windows.Forms.PictureBox noteBox22;
         private System.Windows.Forms.PictureBox noteBox3;
