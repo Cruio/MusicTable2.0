@@ -105,7 +105,7 @@
             this.niveau1Lock.BackColor = System.Drawing.Color.Transparent;
             this.niveau1Lock.Cursor = System.Windows.Forms.Cursors.Hand;
             this.niveau1Lock.Image = global::MusicTable2._0.Properties.Resources.Unlock;
-            this.niveau1Lock.Location = new System.Drawing.Point(1008, 49);
+            this.niveau1Lock.Location = new System.Drawing.Point(1370, 49);
             this.niveau1Lock.Name = "niveau1Lock";
             this.niveau1Lock.Size = new System.Drawing.Size(111, 76);
             this.niveau1Lock.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -120,7 +120,7 @@
             this.niveau2Lock.Cursor = System.Windows.Forms.Cursors.Hand;
             this.niveau2Lock.Enabled = false;
             this.niveau2Lock.Image = global::MusicTable2._0.Properties.Resources.Lock;
-            this.niveau2Lock.Location = new System.Drawing.Point(1008, 160);
+            this.niveau2Lock.Location = new System.Drawing.Point(1370, 163);
             this.niveau2Lock.Name = "niveau2Lock";
             this.niveau2Lock.Size = new System.Drawing.Size(111, 76);
             this.niveau2Lock.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -135,7 +135,7 @@
             this.niveau3Lock.Cursor = System.Windows.Forms.Cursors.Hand;
             this.niveau3Lock.Enabled = false;
             this.niveau3Lock.Image = global::MusicTable2._0.Properties.Resources.Lock;
-            this.niveau3Lock.Location = new System.Drawing.Point(1008, 271);
+            this.niveau3Lock.Location = new System.Drawing.Point(1370, 274);
             this.niveau3Lock.Name = "niveau3Lock";
             this.niveau3Lock.Size = new System.Drawing.Size(111, 76);
             this.niveau3Lock.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -150,7 +150,7 @@
             this.niveau4Lock.Cursor = System.Windows.Forms.Cursors.Hand;
             this.niveau4Lock.Enabled = false;
             this.niveau4Lock.Image = global::MusicTable2._0.Properties.Resources.Lock;
-            this.niveau4Lock.Location = new System.Drawing.Point(1008, 382);
+            this.niveau4Lock.Location = new System.Drawing.Point(1370, 385);
             this.niveau4Lock.Name = "niveau4Lock";
             this.niveau4Lock.Size = new System.Drawing.Size(111, 76);
             this.niveau4Lock.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -164,7 +164,7 @@
             this.niveau1Label.AutoSize = true;
             this.niveau1Label.BackColor = System.Drawing.Color.Transparent;
             this.niveau1Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.niveau1Label.Location = new System.Drawing.Point(1012, 128);
+            this.niveau1Label.Location = new System.Drawing.Point(1374, 131);
             this.niveau1Label.Name = "niveau1Label";
             this.niveau1Label.Size = new System.Drawing.Size(107, 29);
             this.niveau1Label.TabIndex = 4;
@@ -176,7 +176,7 @@
             this.niveau2Label.AutoSize = true;
             this.niveau2Label.BackColor = System.Drawing.Color.Transparent;
             this.niveau2Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.niveau2Label.Location = new System.Drawing.Point(1012, 239);
+            this.niveau2Label.Location = new System.Drawing.Point(1374, 242);
             this.niveau2Label.Name = "niveau2Label";
             this.niveau2Label.Size = new System.Drawing.Size(107, 29);
             this.niveau2Label.TabIndex = 5;
@@ -188,7 +188,7 @@
             this.niveau3Label.AutoSize = true;
             this.niveau3Label.BackColor = System.Drawing.Color.Transparent;
             this.niveau3Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.niveau3Label.Location = new System.Drawing.Point(1012, 350);
+            this.niveau3Label.Location = new System.Drawing.Point(1374, 353);
             this.niveau3Label.Name = "niveau3Label";
             this.niveau3Label.Size = new System.Drawing.Size(107, 29);
             this.niveau3Label.TabIndex = 6;
@@ -200,7 +200,7 @@
             this.niveau4Label.AutoSize = true;
             this.niveau4Label.BackColor = System.Drawing.Color.Transparent;
             this.niveau4Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.niveau4Label.Location = new System.Drawing.Point(1012, 461);
+            this.niveau4Label.Location = new System.Drawing.Point(1374, 464);
             this.niveau4Label.Name = "niveau4Label";
             this.niveau4Label.Size = new System.Drawing.Size(107, 29);
             this.niveau4Label.TabIndex = 7;
@@ -212,7 +212,7 @@
             this.niveauerLabel.AutoSize = true;
             this.niveauerLabel.BackColor = System.Drawing.Color.Transparent;
             this.niveauerLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.niveauerLabel.Location = new System.Drawing.Point(1001, 9);
+            this.niveauerLabel.Location = new System.Drawing.Point(1364, 9);
             this.niveauerLabel.Name = "niveauerLabel";
             this.niveauerLabel.Size = new System.Drawing.Size(132, 33);
             this.niveauerLabel.TabIndex = 8;
@@ -224,7 +224,7 @@
             this.exitButton.BackColor = System.Drawing.Color.Transparent;
             this.exitButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.exitButton.Image = global::MusicTable2._0.Properties.Resources.Door;
-            this.exitButton.Location = new System.Drawing.Point(1008, 493);
+            this.exitButton.Location = new System.Drawing.Point(1370, 643);
             this.exitButton.Name = "exitButton";
             this.exitButton.Size = new System.Drawing.Size(111, 143);
             this.exitButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -238,7 +238,7 @@
             this.playButton.BackColor = System.Drawing.Color.Transparent;
             this.playButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.playButton.Image = global::MusicTable2._0.Properties.Resources.Play;
-            this.playButton.Location = new System.Drawing.Point(852, 12);
+            this.playButton.Location = new System.Drawing.Point(1201, 29);
             this.playButton.Name = "playButton";
             this.playButton.Size = new System.Drawing.Size(150, 131);
             this.playButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -275,7 +275,7 @@
             this.flowLayoutPanel1.Controls.Add(this.star3Level4);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(13, 58);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(804, 85);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1182, 102);
             this.flowLayoutPanel1.TabIndex = 13;
             // 
             // star1Level1
@@ -391,7 +391,7 @@
             // star2Level4
             // 
             this.star2Level4.Image = global::MusicTable2._0.Properties.Resources.Star;
-            this.star2Level4.Location = new System.Drawing.Point(3, 73);
+            this.star2Level4.Location = new System.Drawing.Point(803, 3);
             this.star2Level4.Name = "star2Level4";
             this.star2Level4.Size = new System.Drawing.Size(74, 64);
             this.star2Level4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -403,7 +403,7 @@
             // 
             this.star3Level4.Enabled = false;
             this.star3Level4.Image = global::MusicTable2._0.Properties.Resources.Star;
-            this.star3Level4.Location = new System.Drawing.Point(83, 73);
+            this.star3Level4.Location = new System.Drawing.Point(883, 3);
             this.star3Level4.Name = "star3Level4";
             this.star3Level4.Size = new System.Drawing.Size(74, 64);
             this.star3Level4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -425,10 +425,13 @@
             // 
             // showCurrentGameState
             // 
+            this.showCurrentGameState.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.showCurrentGameState.Image = ((System.Drawing.Image)(resources.GetObject("showCurrentGameState.Image")));
             this.showCurrentGameState.Location = new System.Drawing.Point(18, 190);
             this.showCurrentGameState.Name = "showCurrentGameState";
-            this.showCurrentGameState.Size = new System.Drawing.Size(988, 482);
+            this.showCurrentGameState.Size = new System.Drawing.Size(1333, 596);
             this.showCurrentGameState.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.showCurrentGameState.TabIndex = 15;
             this.showCurrentGameState.TabStop = false;
