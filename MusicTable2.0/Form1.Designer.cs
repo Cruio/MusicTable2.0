@@ -396,7 +396,7 @@
             this.noteBox.BackColor = System.Drawing.Color.Transparent;
             this.noteBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.noteBox.Image = ((System.Drawing.Image)(resources.GetObject("noteBox.Image")));
-            this.noteBox.Location = new System.Drawing.Point(459, 382);
+            this.noteBox.Location = new System.Drawing.Point(611, 370);
             this.noteBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.noteBox.Name = "noteBox";
             this.noteBox.Size = new System.Drawing.Size(75, 41);
@@ -409,6 +409,7 @@
             this.showCurrentGameState.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.showCurrentGameState.BackColor = System.Drawing.Color.Transparent;
             this.showCurrentGameState.Image = ((System.Drawing.Image)(resources.GetObject("showCurrentGameState.Image")));
             this.showCurrentGameState.Location = new System.Drawing.Point(14, 154);
             this.showCurrentGameState.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
