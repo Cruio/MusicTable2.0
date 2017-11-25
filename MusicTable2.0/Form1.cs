@@ -54,7 +54,7 @@ namespace MusicTable2._0
         int controlValue = 1;
         
         
-        int[] collum = new int[4]  {418, 721, 1024, 1332};
+        int[] collum = new int[4]  {410, 721, 1024, 1332};
         int[] row = new int[9] { 240, 292, 344, 396, 452, 506, 557, 612, 665 };
         
 
@@ -260,9 +260,9 @@ namespace MusicTable2._0
                 noteBox22.Visible = true;
 
                 //new random note location  
-                noteBox2.Location = new Point(collum[0] + 20, row[randomRow] - 140);
+                noteBox2.Location = new Point(collum[0] + 20, row[randomRow] - 137);
                 System.Threading.Thread.Sleep(150);
-                noteBox22.Location = new Point(collum[2] + 20, row[randomRow2] - 140);
+                noteBox22.Location = new Point(collum[2] + 20, row[randomRow2] - 137);
 
             }
             if (controlValue == 4)
@@ -271,9 +271,9 @@ namespace MusicTable2._0
                 star1Level2.Image = Properties.Resources.StarYellow;
 
                 // new random note location 
-                noteBox2.Location = new Point(collum[0] + 20, row[randomRow] - 140);
+                noteBox2.Location = new Point(collum[0] + 20, row[randomRow] - 137);
                 System.Threading.Thread.Sleep(150);
-                noteBox22.Location = new Point(collum[2] + 20, row[randomRow2] - 140);
+                noteBox22.Location = new Point(collum[2] + 20, row[randomRow2] - 137);
             }
             if (controlValue == 5)
             {
@@ -281,9 +281,9 @@ namespace MusicTable2._0
                 star2Level2.Image = Properties.Resources.StarYellow;
 
                 //new random note location 
-                noteBox2.Location = new Point(collum[0] + 20, row[randomRow] - 140);
+                noteBox2.Location = new Point(collum[0] + 20, row[randomRow] - 137);
                 System.Threading.Thread.Sleep(150);
-                noteBox22.Location = new Point(collum[2] + 20, row[randomRow2] - 140);
+                noteBox22.Location = new Point(collum[2] + 20, row[randomRow2] - 137);
 
             }
             if (controlValue == 6)
@@ -329,13 +329,13 @@ namespace MusicTable2._0
                 noteBox34.Visible = true;
 
                 //new random note location 
-                noteBox3.Location = new Point(collum[0] + 20, row[randomRow] - 137);
+                noteBox3.Location = new Point(collum[0] + 20, row[randomRow] - 133);
                 System.Threading.Thread.Sleep(150);
-                noteBox32.Location = new Point(collum[1] + 20, row[randomRow2] - 137);
+                noteBox32.Location = new Point(collum[1] + 20, row[randomRow2] - 133);
                 System.Threading.Thread.Sleep(150);
-                noteBox33.Location = new Point(collum[2] + 20, row[randomRow3] - 137);
+                noteBox33.Location = new Point(collum[2] + 20, row[randomRow3] - 133);
                 System.Threading.Thread.Sleep(150);
-                noteBox34.Location = new Point(collum[3] + 20, row[randomRow4] - 137);
+                noteBox34.Location = new Point(collum[3] + 20, row[randomRow4] - 133);
             }
             if (controlValue == 7)
             {
@@ -343,13 +343,13 @@ namespace MusicTable2._0
                 star1Level3.Image = Properties.Resources.StarYellow;
 
                 //new random note location 
-                noteBox3.Location = new Point(collum[0] + 20, row[randomRow] - 137);
+                noteBox3.Location = new Point(collum[0] + 20, row[randomRow] - 133);
                 System.Threading.Thread.Sleep(150);
-                noteBox32.Location = new Point(collum[1] + 20, row[randomRow2] - 137);
+                noteBox32.Location = new Point(collum[1] + 20, row[randomRow2] - 133);
                 System.Threading.Thread.Sleep(150);
-                noteBox33.Location = new Point(collum[2] + 20, row[randomRow3] - 137);
+                noteBox33.Location = new Point(collum[2] + 20, row[randomRow3] - 133);
                 System.Threading.Thread.Sleep(150);
-                noteBox34.Location = new Point(collum[3] + 20, row[randomRow4] - 137);
+                noteBox34.Location = new Point(collum[3] + 20, row[randomRow4] - 133);
 
 
             }
@@ -359,13 +359,13 @@ namespace MusicTable2._0
                 star2Level3.Image = Properties.Resources.StarYellow;
 
                 //new random note location 
-                noteBox3.Location = new Point(collum[0] + 20, row[randomRow] - 137);
+                noteBox3.Location = new Point(collum[0] + 20, row[randomRow] - 133);
                 System.Threading.Thread.Sleep(150);
-                noteBox32.Location = new Point(collum[1] + 20, row[randomRow2] - 137);
+                noteBox32.Location = new Point(collum[1] + 20, row[randomRow2] - 133);
                 System.Threading.Thread.Sleep(150);
-                noteBox33.Location = new Point(collum[2] + 20, row[randomRow3] - 137);
+                noteBox33.Location = new Point(collum[2] + 20, row[randomRow3] - 133);
                 System.Threading.Thread.Sleep(150);
-                noteBox34.Location = new Point(collum[3] + 20, row[randomRow4] - 137);
+                noteBox34.Location = new Point(collum[3] + 20, row[randomRow4] - 133);
 
 
             }
@@ -414,13 +414,13 @@ namespace MusicTable2._0
                 noteBox44.Visible = true;
 
                 //new random note location 
-                noteBox4.Location = new Point(collum[0] + 25, row[randomRow] - 137);
+                noteBox4.Location = new Point(collum[0] + 25, row[randomRow] - 133);
                 System.Threading.Thread.Sleep(150);
-                noteBox42.Location = new Point(collum[1] + 25, row[randomRow2] - 137);
+                noteBox42.Location = new Point(collum[1] + 25, row[randomRow2] - 133);
                 System.Threading.Thread.Sleep(150);
-                noteBox43.Location = new Point(collum[2] + 25, row[randomRow3] - 137);
+                noteBox43.Location = new Point(collum[2] + 25, row[randomRow3] - 133);
                 System.Threading.Thread.Sleep(150);
-                noteBox44.Location = new Point(collum[3] + 25, row[randomRow4] - 137);
+                noteBox44.Location = new Point(collum[3] + 25, row[randomRow4] - 133);
 
             }
             if (controlValue == 10)
@@ -429,13 +429,13 @@ namespace MusicTable2._0
                 star1Level4.Image = Properties.Resources.StarYellow;
 
                 //new random note location 
-                noteBox4.Location = new Point(collum[0] + 25, row[randomRow] - 137);
+                noteBox4.Location = new Point(collum[0] + 25, row[randomRow] - 133);
                 System.Threading.Thread.Sleep(150);
-                noteBox42.Location = new Point(collum[1] + 25, row[randomRow2] - 137);
+                noteBox42.Location = new Point(collum[1] + 25, row[randomRow2] - 133);
                 System.Threading.Thread.Sleep(150);
-                noteBox43.Location = new Point(collum[2] + 25, row[randomRow3] - 137);
+                noteBox43.Location = new Point(collum[2] + 25, row[randomRow3] - 133);
                 System.Threading.Thread.Sleep(150);
-                noteBox44.Location = new Point(collum[3] + 25, row[randomRow4] - 137);
+                noteBox44.Location = new Point(collum[3] + 25, row[randomRow4] - 133);
             }
             if (controlValue == 11)
             {
@@ -443,13 +443,13 @@ namespace MusicTable2._0
                 star2Level4.Image = Properties.Resources.StarYellow;
 
                 //new random note location 
-                noteBox4.Location = new Point(collum[0] + 25, row[randomRow] - 137);
+                noteBox4.Location = new Point(collum[0] + 25, row[randomRow] - 133);
                 System.Threading.Thread.Sleep(150);
-                noteBox42.Location = new Point(collum[1] + 25, row[randomRow2] - 137);
+                noteBox42.Location = new Point(collum[1] + 25, row[randomRow2] - 133);
                 System.Threading.Thread.Sleep(150);
-                noteBox43.Location = new Point(collum[2] + 25, row[randomRow3] - 137);
+                noteBox43.Location = new Point(collum[2] + 25, row[randomRow3] - 133);
                 System.Threading.Thread.Sleep(150);
-                noteBox44.Location = new Point(collum[3] + 25, row[randomRow4] - 137);
+                noteBox44.Location = new Point(collum[3] + 25, row[randomRow4] - 133);
             }
             if (controlValue == 12)
             {
