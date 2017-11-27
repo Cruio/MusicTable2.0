@@ -12,12 +12,11 @@ namespace MusicTable2._0
 {
     public partial class Form1 : Form
     {
+        BackgroundWorker worker1;
         public Form1()
         {
-            InitializeComponent();
+           InitializeComponent();
             this.WindowState = FormWindowState.Maximized;
-
-            
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -117,7 +116,7 @@ namespace MusicTable2._0
                 star1Level1.Image = Properties.Resources.StarYellow;
                
                 //new random note location 
-                NiveauSelect(1);
+               NiveauSelect(1);
             }
             if (controlValue == 2)
             {
@@ -387,7 +386,7 @@ namespace MusicTable2._0
 
 
                 noteBox2.Location = new Point(collum[3] + 20, row[randomRow] - 182);
-                System.Threading.Thread.Sleep(150);
+   
                 noteBox22.Location = new Point(collum[1] + 20, row[randomRow2] - 142);
             }
             if (setLvl == 3)
@@ -426,11 +425,11 @@ namespace MusicTable2._0
                 star3Level4.Visible = false;
 
                 noteBox3.Location = new Point(collum[0] + 20, row[randomRow] - 185);
-                System.Threading.Thread.Sleep(150);
+    
                 noteBox32.Location = new Point(collum[1] + 20, row[randomRow2] - 185);
-                System.Threading.Thread.Sleep(150);
+              
                 noteBox33.Location = new Point(collum[2] + 20, row[randomRow3] - 185);
-                System.Threading.Thread.Sleep(150);
+            
                 noteBox34.Location = new Point(collum[3] + 20, row[randomRow4] - 185);
             }
             if (setLvl == 4)
@@ -469,11 +468,11 @@ namespace MusicTable2._0
                 star3Level4.Visible = true;
 
                 noteBox4.Location = new Point(collum[0] + 25, row[randomRow] - 187);
-                System.Threading.Thread.Sleep(150);
+             
                 noteBox42.Location = new Point(collum[1] + 25, row[randomRow2] - 187);
-                System.Threading.Thread.Sleep(150);
+               
                 noteBox43.Location = new Point(collum[2] + 25, row[randomRow3] - 187);
-                System.Threading.Thread.Sleep(150);
+              
                 noteBox44.Location = new Point(collum[3] + 25, row[randomRow4] - 187);
             }
 
