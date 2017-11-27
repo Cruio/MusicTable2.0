@@ -50,7 +50,7 @@ namespace MusicTable2._0
 
         //UI contorl values
 
-        int lvlUnlock = 1;
+        
         int controlValue = 1;
         
         
@@ -83,7 +83,7 @@ namespace MusicTable2._0
         {
             showCurrentLevelLabel.Text = "Niveau 2";
 
-            lvlUnlock = 2;
+           
 
              NiveauSelect(2);
         }
@@ -92,7 +92,7 @@ namespace MusicTable2._0
         {
             showCurrentLevelLabel.Text = "Niveau 3";
 
-            lvlUnlock = 3;
+            
 
             NiveauSelect(3);
         }
@@ -322,7 +322,7 @@ namespace MusicTable2._0
                 noteBox2.Visible = false;
                 noteBox22.Visible = false;
 
-                //hides the notes for the thrid lvl
+                //hides the notes for the third lvl
                 noteBox3.Visible = false;
                 noteBox32.Visible = false;
                 noteBox33.Visible = false;
