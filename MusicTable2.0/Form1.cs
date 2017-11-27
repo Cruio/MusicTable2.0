@@ -10,6 +10,7 @@ using System.Windows.Forms;
 
 namespace MusicTable2._0
 {
+
     public partial class Form1 : Form
     {
         public Form1()
@@ -27,7 +28,8 @@ namespace MusicTable2._0
         //UI contorl values
         int lvlUnlock = 1;
         int controlValue = 1;
-     
+
+
 
         //play Button Click event
         private void pictureBox6_Click(object sender, EventArgs e)
@@ -301,6 +303,11 @@ namespace MusicTable2._0
         private void exitButton_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void showCurrentGameState_Click(object sender, EventArgs e)
+        {
+
         }
     }
 
