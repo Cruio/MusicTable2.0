@@ -31,10 +31,12 @@ namespace MusicTable2._0
             fuck.checkSound(4, 7);
             fuck.checkSound(3, 8);
             fuck.checkSound(1, 4);
+
             Thread t1;
             Detector detector = new Detector();
             t1 = new Thread(() => detector.Looper()); ;
             t1.Start();
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new StartScreen());

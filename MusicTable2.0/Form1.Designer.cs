@@ -275,7 +275,7 @@
             this.flowLayoutPanel1.Controls.Add(this.star3Level4);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(13, 49);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1198, 94);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(251, 94);
             this.flowLayoutPanel1.TabIndex = 13;
             // 
             // star1Level1
@@ -312,7 +312,7 @@
             // star1Level2
             // 
             this.star1Level2.Image = global::MusicTable2._0.Properties.Resources.Star;
-            this.star1Level2.Location = new System.Drawing.Point(243, 3);
+            this.star1Level2.Location = new System.Drawing.Point(3, 73);
             this.star1Level2.Name = "star1Level2";
             this.star1Level2.Size = new System.Drawing.Size(74, 64);
             this.star1Level2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -323,7 +323,7 @@
             // star2Level2
             // 
             this.star2Level2.Image = global::MusicTable2._0.Properties.Resources.Star;
-            this.star2Level2.Location = new System.Drawing.Point(323, 3);
+            this.star2Level2.Location = new System.Drawing.Point(83, 73);
             this.star2Level2.Name = "star2Level2";
             this.star2Level2.Size = new System.Drawing.Size(74, 64);
             this.star2Level2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -335,7 +335,7 @@
             // 
             this.star3Level2.Enabled = false;
             this.star3Level2.Image = global::MusicTable2._0.Properties.Resources.Star;
-            this.star3Level2.Location = new System.Drawing.Point(403, 3);
+            this.star3Level2.Location = new System.Drawing.Point(163, 73);
             this.star3Level2.Name = "star3Level2";
             this.star3Level2.Size = new System.Drawing.Size(74, 64);
             this.star3Level2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -346,7 +346,7 @@
             // star1Level3
             // 
             this.star1Level3.Image = global::MusicTable2._0.Properties.Resources.Star;
-            this.star1Level3.Location = new System.Drawing.Point(483, 3);
+            this.star1Level3.Location = new System.Drawing.Point(3, 143);
             this.star1Level3.Name = "star1Level3";
             this.star1Level3.Size = new System.Drawing.Size(74, 64);
             this.star1Level3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -357,7 +357,7 @@
             // star2Level3
             // 
             this.star2Level3.Image = global::MusicTable2._0.Properties.Resources.Star;
-            this.star2Level3.Location = new System.Drawing.Point(563, 3);
+            this.star2Level3.Location = new System.Drawing.Point(83, 143);
             this.star2Level3.Name = "star2Level3";
             this.star2Level3.Size = new System.Drawing.Size(74, 64);
             this.star2Level3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -369,7 +369,7 @@
             // 
             this.star3Level3.Enabled = false;
             this.star3Level3.Image = global::MusicTable2._0.Properties.Resources.Star;
-            this.star3Level3.Location = new System.Drawing.Point(643, 3);
+            this.star3Level3.Location = new System.Drawing.Point(163, 143);
             this.star3Level3.Name = "star3Level3";
             this.star3Level3.Size = new System.Drawing.Size(74, 64);
             this.star3Level3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -380,7 +380,7 @@
             // star1Level4
             // 
             this.star1Level4.Image = global::MusicTable2._0.Properties.Resources.Star;
-            this.star1Level4.Location = new System.Drawing.Point(723, 3);
+            this.star1Level4.Location = new System.Drawing.Point(3, 213);
             this.star1Level4.Name = "star1Level4";
             this.star1Level4.Size = new System.Drawing.Size(74, 64);
             this.star1Level4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -391,7 +391,7 @@
             // star2Level4
             // 
             this.star2Level4.Image = global::MusicTable2._0.Properties.Resources.Star;
-            this.star2Level4.Location = new System.Drawing.Point(803, 3);
+            this.star2Level4.Location = new System.Drawing.Point(83, 213);
             this.star2Level4.Name = "star2Level4";
             this.star2Level4.Size = new System.Drawing.Size(74, 64);
             this.star2Level4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -403,7 +403,7 @@
             // 
             this.star3Level4.Enabled = false;
             this.star3Level4.Image = global::MusicTable2._0.Properties.Resources.Star;
-            this.star3Level4.Location = new System.Drawing.Point(883, 3);
+            this.star3Level4.Location = new System.Drawing.Point(163, 213);
             this.star3Level4.Name = "star3Level4";
             this.star3Level4.Size = new System.Drawing.Size(74, 64);
             this.star3Level4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -573,10 +573,10 @@
             this.BackgroundImage = global::MusicTable2._0.Properties.Resources.backgroundyesnonotes;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1362, 741);
+            this.Controls.Add(this.playButton);
             this.Controls.Add(this.noteBox);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.showCurrentLevelLabel);
-            this.Controls.Add(this.playButton);
             this.Controls.Add(this.exitButton);
             this.Controls.Add(this.niveauerLabel);
             this.Controls.Add(this.niveau4Label);

@@ -41,7 +41,7 @@ namespace MusicTable2._0
             Random rnd = new Random();
             int randomRow = rnd.Next(0, 8);
             //the first note spawn
-            noteBox.Location = new Point(collum[0], row[randomRow]);
+            noteBox.Location = new Point(collum[3], row[randomRow]);
 
 
 
@@ -54,9 +54,8 @@ namespace MusicTable2._0
         int controlValue = 1;
         
         
-        int[] collum = new int[4]  {410, 721, 1024, 1332};
-        int[] row = new int[9] { 240, 292, 344, 396, 452, 506, 557, 612, 665 };
-        
+        int[] collum = new int[4]  { 824, 630,  427, 230  };
+        int[] row = new int[9] { 565, 520, 470, 425, 380, 335, 290, 245, 200 };
 
 
         //play Button Click event
@@ -348,7 +347,7 @@ namespace MusicTable2._0
                 star2Level4.Visible = false;
                 star3Level4.Visible = false;
 
-                noteBox.Location = new Point(collum[0], row[randomRow]);
+                noteBox.Location = new Point(collum[3], row[randomRow]);
 
             }
             if (setLvl == 2)
@@ -387,9 +386,9 @@ namespace MusicTable2._0
                 star3Level4.Visible = false;
 
 
-                noteBox2.Location = new Point(collum[0] + 20, row[randomRow] - 137);
+                noteBox2.Location = new Point(collum[3] + 20, row[randomRow] - 142);
                 System.Threading.Thread.Sleep(150);
-                noteBox22.Location = new Point(collum[2] + 20, row[randomRow2] - 137);
+                noteBox22.Location = new Point(collum[1] + 20, row[randomRow2] - 142);
             }
             if (setLvl == 3)
             {
@@ -426,13 +425,13 @@ namespace MusicTable2._0
                 star2Level4.Visible = false;
                 star3Level4.Visible = false;
 
-                noteBox3.Location = new Point(collum[0] + 20, row[randomRow] - 133);
+                noteBox3.Location = new Point(collum[0] + 20, row[randomRow] - 140);
                 System.Threading.Thread.Sleep(150);
-                noteBox32.Location = new Point(collum[1] + 20, row[randomRow2] - 133);
+                noteBox32.Location = new Point(collum[1] + 20, row[randomRow2] - 140);
                 System.Threading.Thread.Sleep(150);
-                noteBox33.Location = new Point(collum[2] + 20, row[randomRow3] - 133);
+                noteBox33.Location = new Point(collum[2] + 20, row[randomRow3] - 140);
                 System.Threading.Thread.Sleep(150);
-                noteBox34.Location = new Point(collum[3] + 20, row[randomRow4] - 133);
+                noteBox34.Location = new Point(collum[3] + 20, row[randomRow4] - 140);
             }
             if (setLvl == 4)
             {
@@ -469,13 +468,13 @@ namespace MusicTable2._0
                 star2Level4.Visible = true;
                 star3Level4.Visible = true;
 
-                noteBox4.Location = new Point(collum[0] + 25, row[randomRow] - 133);
+                noteBox4.Location = new Point(collum[0] + 25, row[randomRow] - 142);
                 System.Threading.Thread.Sleep(150);
-                noteBox42.Location = new Point(collum[1] + 25, row[randomRow2] - 133);
+                noteBox42.Location = new Point(collum[1] + 25, row[randomRow2] - 142);
                 System.Threading.Thread.Sleep(150);
-                noteBox43.Location = new Point(collum[2] + 25, row[randomRow3] - 133);
+                noteBox43.Location = new Point(collum[2] + 25, row[randomRow3] - 142);
                 System.Threading.Thread.Sleep(150);
-                noteBox44.Location = new Point(collum[3] + 25, row[randomRow4] - 133);
+                noteBox44.Location = new Point(collum[3] + 25, row[randomRow4] - 142);
             }
 
 
