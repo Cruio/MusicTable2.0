@@ -19,21 +19,28 @@ namespace MusicTable2._0
 {
     class Detector
     {
-        private Mat capture;
-        Mat invertedCapture;
-        Mat captureWithKeypoints;
-        private SimpleBlobDetector detector;
-        private VectorOfVectorOfPoint contours;
-        private Mat hierarchy;
+        Mat capture = new Mat();
+        Mat invertedCapture = new Mat();
+        Mat captureWithKeypoints = new Mat();
+        private SimpleBlobDetector detector = new SimpleBlobDetector();
+        private VectorOfVectorOfPoint contours = new VectorOfVectorOfPoint();
+        private Mat hierarchy = new Mat();
         private bool[] hasChild;
         private int[] noteType;
         private int noteAmount;
         public int[,] notePositions = new int[4, 9];
-
+        
         public int Looper()
         {
-
-            VideoCapture cap = new VideoCapture(0);
+            VideoCapture cap;
+            try
+            {
+                cap = new VideoCapture(0);
+            } catch (NullReferenceException e)
+            {
+                return 1;
+            }
+            if (!cap.IsOpened) return 2;
             int counter = 0;
             Size size = new Size(3, 3);
             Point point = new Point(1, 1);
@@ -41,8 +48,9 @@ namespace MusicTable2._0
             while (true)
             {
                 cap.Read(capture);
-                CvInvoke.MedianBlur(capture, capture, 3);
                 CvInvoke.CvtColor(capture, capture, ColorConversion.Bgr2Gray, 0);
+                CvInvoke.MedianBlur(capture, capture, 3);
+                
                 CvInvoke.Threshold(capture, capture, 215, 255, ThresholdType.Binary);
                 CvInvoke.NamedWindow("source", NamedWindowType.AutoSize);
                 CvInvoke.Erode(capture, capture, CvInvoke.GetStructuringElement(ElementShape.Ellipse, size, point), point, 1, BorderType.Default, new MCvScalar(1.0));
@@ -52,6 +60,8 @@ namespace MusicTable2._0
                 CvInvoke.BitwiseNot(capture, invertedCapture);
                 VectorOfKeyPoint keyPoints = new VectorOfKeyPoint(detector.Detect(invertedCapture));
                 Features2DToolbox.DrawKeypoints(invertedCapture, keyPoints, captureWithKeypoints, new Bgr(255, 0, 0));
+                CvInvoke.NamedWindow("KeyPoints", NamedWindowType.AutoSize);
+                CvInvoke.Imshow("KeyPoints", captureWithKeypoints);
                 for (int i = 0; i < keyPoints.Size; i++)
                 {
                     int x;

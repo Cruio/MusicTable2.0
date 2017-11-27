@@ -16,7 +16,7 @@ namespace MusicTable2._0
         {
             InitializeComponent();
             this.WindowState = FormWindowState.Maximized;
-            
+
             
         }
 
