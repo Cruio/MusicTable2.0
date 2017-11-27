@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Diagnostics;
 using System.Drawing;
 using Emgu.CV;
 using Emgu.CV.CvEnum;
@@ -26,8 +27,8 @@ namespace MusicTable2._0
         private VectorOfVectorOfPoint contours = new VectorOfVectorOfPoint();
         private Mat hierarchy = new Mat();
         private bool[] hasChild;
-        private int[] noteType;
-        private int noteAmount;
+        private int[] noteType = new int[4];
+        private int noteAmount = 0;
         public int[,] notePositions = new int[4, 9];
         
         public int Looper()
@@ -68,7 +69,9 @@ namespace MusicTable2._0
                     int y;
                     x = (int)keyPoints[i].Point.X;
                     y = (int)keyPoints[i].Point.Y;
-                    if (x < 100 && x > 90 && y < 100 && y > 90)
+                    Debug.WriteLine(x);
+                    Debug.WriteLine(y);
+                    if (x < 490 && x > 415 && y < 115 && y > 45)
                     {
                         counter++;
                         System.Threading.Thread.Sleep(1000 / 30);
@@ -92,6 +95,7 @@ namespace MusicTable2._0
         }
         private void CheckNotes()
         {
+            Console.WriteLine("I'm here!");
             hasChild = new bool[contours.Size];
             for (int i = 0; i < contours.Size; i++)
             {
@@ -111,6 +115,7 @@ namespace MusicTable2._0
                     {
                         noteType[i] = 2;
                     }
+                    Debug.WriteLine("No child!");
                 }
                 else if (hasChild[i])
                 {
@@ -122,6 +127,7 @@ namespace MusicTable2._0
                     {
                         noteType[i] = 1;
                     }
+                    Debug.WriteLine("Child!");
                 }
             }
             int line = 18;
