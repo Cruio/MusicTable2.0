@@ -12,7 +12,7 @@ namespace MusicTable2._0
 {
     public partial class Form1 : Form
     {
-        BackgroundWorker worker1;
+
         public Form1()
         {
            InitializeComponent();
