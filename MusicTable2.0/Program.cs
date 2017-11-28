@@ -22,16 +22,11 @@ namespace MusicTable2._0
         static void Main()
         {
             Sound fuck = new Sound();
-            fuck.assignment(0, 1, 1);
+            fuck.assignment(0, 0, 1);
             fuck.assignment(1, 2, 4);
             fuck.assignment(2, 3, 7);
             fuck.assignment(3, 4, 0);
             fuck.startRecord();
-            /*fuck.assignment(0, 3, 5);
-            fuck.assignment(1, 3, 6);
-            fuck.assignment(2, 3, 7);
-            fuck.assignment(3, 1, 8);
-            fuck.startRecord();*/
 
             Thread t1;
             Detector detector = new Detector();

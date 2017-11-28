@@ -9,46 +9,25 @@ using Sanford.Multimedia.Midi;
 
 
 
-
-
-
 namespace MusicTable2._0
 {
     class Sound
     {
-        //https://stackoverflow.com/questions/8109218/playing-piano-tones-using-c-sharp
-        //https://www.codeproject.com/Articles/6228/C-MIDI-Toolkit
+        //The ChannelMessageBuilder comes from using Sanford.Multimedia.Midi. This is needed to generate the different sounds.
         ChannelMessageBuilder builder = new ChannelMessageBuilder();
 
-
-        SoundPlayer pianist = new SoundPlayer();
-        int endThread = 1;
+        //The loopchecker is an int used to check whether or not the system is currenly playing sounds. 
+        //It will be used to prohibit certain functions, so as not to fuck it up.
         int loopchecker = 0;
-        public int duration;
-        public int[,] playOrder = new int[4, 2];
 
-        /*public void testingstuff(int pitch)
-        {
-            using (OutputDevice outDevice = new OutputDevice(0))
-            {
-                builder.Command = ChannelCommand.NoteOn;
-                builder.MidiChannel = 0;
-                builder.Data1 = pitch;
-                builder.Data2 = 127;
-                builder.Build();
+        //duration is used determine how long sounds are played.
+        int duration;
 
-                outDevice.Send(builder.Result);
+        //playOrder is used to store the desired pitch and shape of a note. 
+        int[,] playOrder = new int[4, 2];
 
-                Thread.Sleep(1000);
-
-                builder.Command = ChannelCommand.NoteOff;
-                builder.Data2 = 0;
-                builder.Build();
-
-                outDevice.Send(builder.Result);
-            }
-        }*/
-
+        //startRecord is the function that starts playing sounds. If loopchecker = 0, that is no sound is currently being played, it initializes a new thread and makes it run
+        //the function grammophone. It then starts said thread.
         public void startRecord()
         {
             if (loopchecker == 0)
@@ -58,8 +37,10 @@ namespace MusicTable2._0
             }
         }
 
+        //checkSound assigns the desired values to the ChannelMessageBuilder object named builder.
         public void checkSound(int shape, int pitch)
         {
+                //Data2 is the volume of the sound, with 127 being maximum.
                 builder.Data2 = 127;
 
                 if (shape == 1)
@@ -79,6 +60,8 @@ namespace MusicTable2._0
                     duration = 8;
                 }
 
+
+                //Data1 is the pitch of the sound.
                 switch (pitch)
                 {
                     case 1:
@@ -109,39 +92,46 @@ namespace MusicTable2._0
                         builder.Data1 = 74;
                         break;
                     default:
+                    //if no pitch has been assigned, the volume is lowered to 0, so as not to play any sound.
                     builder.Data2 = 0;
                     break;
                 }
         }
 
-        public void grammophone()
+        //grammophone sets loopchecker to 1, to prevent it from being started again before being finished. It then goes through a loop
+        //where it uses the values from playOrder to play the different notes in order.
+        void grammophone()
         {
-            loopchecker = 1;
-            using (OutputDevice outDevice = new OutputDevice(0))
+            if (loopchecker == 0)
             {
-                for (int i = 0; i < 4; i++)
+                loopchecker = 1;
+                using (OutputDevice outDevice = new OutputDevice(0))
                 {
-                    builder.Command = ChannelCommand.NoteOn;
-                    builder.MidiChannel = 0;
+                    for (int i = 0; i < 4; i++)
+                    {
+                        builder.Command = ChannelCommand.NoteOn;
+                        builder.MidiChannel = 0;
 
-                    checkSound(playOrder[i, 0], playOrder[i, 1]);
+                        checkSound(playOrder[i, 0], playOrder[i, 1]);
 
-                    builder.Build();
-                    outDevice.Send(builder.Result);
+                        builder.Build();
+                        outDevice.Send(builder.Result);
 
-                    Thread.Sleep(2000/duration);
+                        Thread.Sleep(2000 / duration);
 
-                    builder.Command = ChannelCommand.NoteOff;
-                    builder.Data2 = 0;
-                    builder.Build();
+                        builder.Command = ChannelCommand.NoteOff;
+                        builder.Data2 = 0;
+                        builder.Build();
 
-                    outDevice.Send(builder.Result);
+                        outDevice.Send(builder.Result);
+                    }
+                    reset();
+                    loopchecker = 0;
                 }
-                reset();
-                loopchecker = 0;
             }
         }
 
+        //Use this function outside of this class to set values in playOrder
         public void assignment(int order, int shape, int pitch)
         {
                 playOrder[order, 0] = shape;
