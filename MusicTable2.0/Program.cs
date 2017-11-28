@@ -6,7 +6,7 @@ using System.Windows.Forms;
 using System.Media;
 using MusicTable2._0;
 using System.Threading;
-
+using Sanford.Multimedia.Midi;
 
 namespace MusicTable2._0
 {
@@ -22,15 +22,16 @@ namespace MusicTable2._0
         static void Main()
         {
             Sound fuck = new Sound();
-            fuck.checkSound(3, 2);
-            fuck.checkSound(3, 3);
-            fuck.checkSound(1, 4);
-            fuck.checkSound(4, 4);
-            fuck.checkSound(4, 5);
-            fuck.checkSound(4, 6);
-            fuck.checkSound(4, 7);
-            fuck.checkSound(3, 8);
-            fuck.checkSound(1, 4);
+            fuck.assignment(0, 1, 1);
+            fuck.assignment(1, 2, 4);
+            fuck.assignment(2, 3, 7);
+            fuck.assignment(3, 4, 0);
+            fuck.startRecord();
+            /*fuck.assignment(0, 3, 5);
+            fuck.assignment(1, 3, 6);
+            fuck.assignment(2, 3, 7);
+            fuck.assignment(3, 1, 8);
+            fuck.startRecord();*/
 
             Thread t1;
             Detector detector = new Detector();
