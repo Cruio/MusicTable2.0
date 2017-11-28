@@ -6,7 +6,7 @@ using System.Windows.Forms;
 using System.Media;
 using MusicTable2._0;
 using System.Threading;
-using Sanford.Multimedia.Midi;
+
 
 namespace MusicTable2._0
 {
@@ -22,10 +22,10 @@ namespace MusicTable2._0
         static void Main()
         {
             Sound fuck = new Sound();
-            fuck.assignment(0, 0, 1);
+            fuck.assignment(0, 1, 1);
             fuck.assignment(1, 2, 4);
             fuck.assignment(2, 3, 7);
-            fuck.assignment(3, 4, 0);
+            fuck.assignment(3, 4, 9);
             fuck.startRecord();
 
             Thread t1;

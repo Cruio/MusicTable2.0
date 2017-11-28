@@ -47,17 +47,21 @@ namespace MusicTable2._0
                 {
                     duration = 1;
                 }
-                if (shape == 2)
+                else if (shape == 2)
                 {
                     duration = 2;
                 }
-                if (shape == 3)
+                else if (shape == 3)
                 {
                     duration = 4;
                 }
-                if (shape == 4)
+                else if (shape == 4)
                 {
                     duration = 8;
+                }
+                else
+                {
+                duration = 2000;
                 }
 
 
