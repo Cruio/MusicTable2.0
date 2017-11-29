@@ -42,7 +42,7 @@ namespace MusicTable2._0
             int randomRow2 = rnd.Next(0, 8);
             int randomRow3 = rnd.Next(0, 8);
             int randomRow4 = rnd.Next(0, 8);
-            rowPos = new int[4] { randomRow, randomRow2, randomRow3, randomRow4 };
+            rowPos = new int[4] { randomRow4, randomRow3, randomRow2, randomRow };
             //the first note spawn
             noteBox.Location = new Point(collum[3], row[randomRow]);
 
@@ -317,7 +317,7 @@ namespace MusicTable2._0
             int randomRow2 = rnd.Next(0, 8);
             int randomRow3 = rnd.Next(0, 8);
             int randomRow4 = rnd.Next(0, 8);
-            rowPos = new int[4] { randomRow,randomRow2, randomRow3, randomRow4 };
+            rowPos = new int[4] { randomRow4, randomRow3, randomRow2, randomRow };
 
 
             if (setLvl == 1)
@@ -396,7 +396,7 @@ namespace MusicTable2._0
 
                 noteBox2.Location = new Point(collum[3] + 20, row[randomRow] - 182);
    
-                noteBox22.Location = new Point(collum[1] + 20, row[randomRow2] - 142);
+                noteBox22.Location = new Point(collum[1] + 20, row[randomRow3] - 182);
             }
             if (setLvl == 3)
             {

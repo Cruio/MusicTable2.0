@@ -93,7 +93,7 @@
       <HintPath>..\..\..\..\..\..\Emgu\emgucv-windesktop 3.3.0.2824\bin\Emgu.CV.World.dll</HintPath>
     </Reference>
     <Reference Include="Sanford.Multimedia.Midi">
-      <HintPath>..\..\Sanford.Multimedia.Midi\Source\bin\Debug\Sanford.Multimedia.Midi.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\Sanford.Multimedia.Midikk\Source\bin\Debug\Sanford.Multimedia.Midi.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
