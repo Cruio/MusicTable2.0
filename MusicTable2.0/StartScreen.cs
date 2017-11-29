@@ -12,6 +12,7 @@ namespace MusicTable2._0
 {
     public partial class StartScreen : Form
     {
+        public static Form1 gameForm;
         public StartScreen()
         {
             InitializeComponent();
@@ -20,7 +21,7 @@ namespace MusicTable2._0
 
         private void StartButton_Click(object sender, EventArgs e)
         {
-            Form1 gameForm = new Form1();
+            gameForm = new Form1();
 
             // Show the settings form
             gameForm.Show();
@@ -28,7 +29,13 @@ namespace MusicTable2._0
 
         private void AfslutButton_Click(object sender, EventArgs e)
         {
+
             this.Close();
+        }
+
+        private void StartScreen_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

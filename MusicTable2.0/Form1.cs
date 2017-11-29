@@ -48,7 +48,10 @@ namespace MusicTable2._0
 
             Random rnd = new Random();
             int randomRow = rnd.Next(0, 8);
-
+            int randomRow2 = rnd.Next(0, 8);
+            int randomRow3 = rnd.Next(0, 8);
+            int randomRow4 = rnd.Next(0, 8);
+            rowPos = new int[4] { randomRow, randomRow2, randomRow3, randomRow4 };
             //the first note spawn
             noteBox.Location = new Point(collum[3], row[randomRow]);
 
@@ -98,10 +101,16 @@ namespace MusicTable2._0
             niveau3Lock.Image = _lock;
             niveau4Lock.Image = _lock;
         }
-
+        private delegate void InvokeDelegate();
+        public void StartStar()
+        {
+            this.BeginInvoke(new InvokeDelegate(StarControl));
+        }
 
         //UI contorl values
-        int controlValue = 1;
+
+
+        public int controlValue = 1;
         
         //coordinates for the notes 
         int[] collum = new int[4]  { 824, 630,  427, 230  };
@@ -109,7 +118,7 @@ namespace MusicTable2._0
 
 
         //play Button Click event
-        private void pictureBox6_Click(object sender, EventArgs e)
+        public void pictureBox6_Click(object sender, EventArgs e)
         {
             //run the StarControl function when play button is clicked
             StarControl();
@@ -155,8 +164,8 @@ namespace MusicTable2._0
 
 
 
-        //this is the control function of the UI
-        void StarControl()
+        //this is the over all control function of the UI
+        public void StarControl()
         {
 
             if (controlValue == 1)
@@ -348,7 +357,7 @@ namespace MusicTable2._0
         {
             this.Close();
         }
-
+        public int[] rowPos;
         //the lvl select function
         void NiveauSelect(int setLvl)
         {
@@ -358,6 +367,7 @@ namespace MusicTable2._0
             int randomRow2 = rnd.Next(0, 8);
             int randomRow3 = rnd.Next(0, 8);
             int randomRow4 = rnd.Next(0, 8);
+            rowPos = new int[4] { randomRow,randomRow2, randomRow3, randomRow4 };
 
 
             if (setLvl == 1)

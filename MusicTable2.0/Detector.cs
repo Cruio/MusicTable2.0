@@ -23,13 +23,14 @@ namespace MusicTable2._0
         Mat capture = new Mat();
         Mat invertedCapture = new Mat();
         Mat captureWithKeypoints = new Mat();
+        public delegate void UseForm1();
         private SimpleBlobDetector detector = new SimpleBlobDetector();
         private VectorOfVectorOfPoint contours = new VectorOfVectorOfPoint();
         private Mat hierarchy = new Mat();
         private bool[] hasChild;
-        private int[] noteType = new int[4];
+        private int[] noteType;
         private int noteAmount = 0;
-        public int[,] notePositions = new int[4, 9];
+        private int[] requiredCols;
         
         public int Looper()
         {
@@ -43,7 +44,7 @@ namespace MusicTable2._0
             }
             if (!cap.IsOpened) return 2;
             int counter = 0;
-            Size size = new Size(3, 3);
+            Size size = new Size(2, 2);
             Point point = new Point(1, 1);
             MCvScalar scalar = new MCvScalar(1);
             while (true)
@@ -96,43 +97,44 @@ namespace MusicTable2._0
         private void CheckNotes()
         {
             Console.WriteLine("I'm here!");
-            hasChild = new bool[contours.Size];
+            noteType = new int[contours.Size];
+            
             for (int i = 0; i < contours.Size; i++)
             {
-                hasChild[i] = false;
-                if (GetMatData(hierarchy, i, 3) == i - 1 && GetMatData(hierarchy, i - 1, 2) == i) hasChild[i] = true;
-                else hasChild[i] = false;
-            }
-            for (int i = 0; i < contours.Size; i++)
-            {
-                if (!hasChild[i])
+                Debug.WriteLine(GetHierarchy(hierarchy, i));
+                if (!CheckChild(i))
                 {
+                    Debug.WriteLine(CvInvoke.ContourArea(contours[i]));
+                    Debug.WriteLine(CvInvoke.ArcLength(contours[i], true));
                     if (CvInvoke.ArcLength(contours[i], true) > 480 && CvInvoke.ArcLength(contours[i], true) < 600)
                     {
                         noteType[i] = 3;
+                        Debug.WriteLine("Eighth!");
                     }
                     else if (CvInvoke.ArcLength(contours[i], true) < 480 && CvInvoke.ArcLength(contours[i], true) > 270)
                     {
                         noteType[i] = 2;
+                        Debug.WriteLine("Quarter!");
                     }
                     Debug.WriteLine("No child!");
                 }
-                else if (hasChild[i])
+                else if (CheckChild(i))
                 {
+                    Debug.WriteLine(CvInvoke.ContourArea(contours[i]));
+                    Debug.WriteLine(CvInvoke.ArcLength(contours[i], true));
                     if (CvInvoke.ContourArea(contours[i]) > 1200 && CvInvoke.ContourArea(contours[i]) < 2200 && CvInvoke.ArcLength(contours[i], true) < 200)
                     {
                         noteType[i] = 0;
+                        Debug.WriteLine("Whole!");
                     }
                     else if (CvInvoke.ArcLength(contours[i], true) > 250)
                     {
                         noteType[i] = 1;
+                        Debug.WriteLine("Half!");
                     }
                     Debug.WriteLine("Child!");
                 }
             }
-            int line = 18;
-            int space = 34;
-            int colWidth = 88;
             for (int i = 0; i < noteType.Length; i++)
             {
                 if (noteType[i] == 3 || noteType[i] == 4)
@@ -142,7 +144,22 @@ namespace MusicTable2._0
                     CvInvoke.BitwiseNot(capture, capture);
                 }
             }
+            StartScreen.gameForm.StartStar();
             VectorOfKeyPoint keyPoints = new VectorOfKeyPoint(detector.Detect(capture));
+            if (StartScreen.gameForm.controlValue >= 1 || StartScreen.gameForm.controlValue <= 3)
+            {
+                requiredCols =new int[1] { 3 };
+            }
+            else if (StartScreen.gameForm.controlValue >= 4 || StartScreen.gameForm.controlValue <= 6)
+            {
+                requiredCols = new int[2] { 1, 3 };
+            }
+            else
+            {
+                requiredCols = new int[4] { 0, 1, 2, 3 };
+            }
+            int[] requiredRow = StartScreen.gameForm.rowPos;
+            int colWidth = 88;
             for (int i = 0; i < keyPoints.Size; i++)
             {
                 int x = (int)keyPoints[i].Point.X;
@@ -152,16 +169,32 @@ namespace MusicTable2._0
                 int rows = 0;
                 while (cols < 4)
                 {
-                    int firstX = 80;
+                    int line = 12;
+                    int space = 36;
+                    int firstX = 85;
+                    if (cols == 0)
+                    {
+                        line = 13;
+                        space = 37;
+                        firstX = 80;
+                    }
                     rows = 0;
                     while (rows < 9)
                     {
-
+                        //if (cols == 0) firstX += 10;
                         if (rows % 2 == 0)
                         {
                             if (x > firstX && x < firstX + line && y > firstY && y < firstY + colWidth)
                             {
-
+                                Debug.WriteLine("There's a note here: " + rows + " " + cols);
+                                for(int j = 0; j < requiredCols.Length; j++)
+                                {
+                                    if (cols == requiredCols[j] && rows == requiredRow[j])
+                                    {
+                                        Debug.WriteLine("Correct position!");
+                                    }
+                                    else Debug.WriteLine("Wrong!");
+                                }
                             }
                             firstX += line;
                         }
@@ -169,7 +202,15 @@ namespace MusicTable2._0
                         {
                             if (x > firstX && x < firstX + space && y > firstY && y < firstY + colWidth && rows % 2 != 0)
                             {
-
+                                Debug.WriteLine("There's a note here:" + rows + " " + cols);
+                                for (int j = 0; j < requiredCols.Length; j++)
+                                {
+                                    if (cols == requiredCols[j] && rows == requiredRow[j])
+                                    {
+                                        Debug.WriteLine("Correct position!");
+                                    }
+                                    else Debug.WriteLine("Wrong!");
+                                }
                             }
                             firstX += space;
                         }
@@ -180,6 +221,74 @@ namespace MusicTable2._0
                 }
 
             }
+        }
+        bool CheckChild(int i)
+        {
+
+                    if (GetHierarchy(hierarchy, i)[2] == i + 1 && GetHierarchy(hierarchy, i + 1)[3] == i) return true;
+                    else return false;
+        }
+
+
+        /// >>>>Based on [joshuanapoli] answer<<<
+        /// <summary>
+        /// Get a neighbor index in the heirarchy tree.
+        /// </summary>
+        /// <returns>
+        /// A neighbor index or -1 if the given neighbor does not exist.
+        /// </returns>
+        //public int Get(HierarchyIndex component, int index)
+        //public int GetHierarchy(Mat Hierarchy, int contourIdx, int component)
+        public int[] GetHierarchy(Mat Hierarchy, int contourIdx)
+        {
+            int[] ret = new int[] { };
+
+            if (Hierarchy.Depth != Emgu.CV.CvEnum.DepthType.Cv32S)
+            {
+                throw new ArgumentOutOfRangeException("ContourData must have Cv32S hierarchy element type.");
+            }
+            if (Hierarchy.Rows != 1)
+            {
+                throw new ArgumentOutOfRangeException("ContourData must have one hierarchy hierarchy row.");
+            }
+            if (Hierarchy.NumberOfChannels != 4)
+            {
+                throw new ArgumentOutOfRangeException("ContourData must have four hierarchy channels.");
+            }
+            if (Hierarchy.Dims != 2)
+            {
+                throw new ArgumentOutOfRangeException("ContourData must have two dimensional hierarchy.");
+            }
+            long elementStride = Hierarchy.ElementSize / sizeof(Int32);
+            var offset0 = (long)0 + contourIdx * elementStride;
+            if (0 <= offset0 && offset0 < Hierarchy.Total.ToInt64() * elementStride)
+            {
+
+
+                var offset1 = (long)1 + contourIdx * elementStride;
+                var offset2 = (long)2 + contourIdx * elementStride;
+                var offset3 = (long)3 + contourIdx * elementStride;
+
+                ret = new int[4];
+
+                unsafe
+                {
+                    //return *((Int32*)Hierarchy.DataPointer.ToPointer() + offset);
+
+                    ret[0] = *((Int32*)Hierarchy.DataPointer.ToPointer() + offset0);
+                    ret[1] = *((Int32*)Hierarchy.DataPointer.ToPointer() + offset1);
+                    ret[2] = *((Int32*)Hierarchy.DataPointer.ToPointer() + offset2);
+                    ret[3] = *((Int32*)Hierarchy.DataPointer.ToPointer() + offset3);
+                }
+
+
+            }
+            //else
+            //{
+            //    return new int[] { };
+            //}
+
+            return ret;
         }
     }
 
