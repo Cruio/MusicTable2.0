@@ -12,6 +12,15 @@ namespace MusicTable2._0
 {
     public partial class Form1 : Form
     {
+        // image variables
+        private Image star;
+        private Image starYellow;
+        private Image unlock;
+        private Image _lock;
+        private Image halfNote;
+        private Image wholeNote;
+        private Image quarterNote;
+        private Image eightNote;
 
         public Form1()
         {
@@ -21,7 +30,7 @@ namespace MusicTable2._0
 
         private void Form1_Load(object sender, EventArgs e)
         {
- 
+            //makes the notes parent to the grid so transparency work
             noteBox.Parent = showCurrentGameState;
 
             noteBox2.Parent = showCurrentGameState;
@@ -46,8 +55,51 @@ namespace MusicTable2._0
             //the first note spawn
             noteBox.Location = new Point(collum[3], row[randomRow]);
 
+            //Image gets the path to the resources
+            star = MusicTable2._0.Properties.Resources.Star;
+            starYellow = MusicTable2._0.Properties.Resources.StarYellow;
+            unlock = MusicTable2._0.Properties.Resources.Unlock;
+            _lock = MusicTable2._0.Properties.Resources.Lock;
+            halfNote = MusicTable2._0.Properties.Resources.Halfnote;
+            wholeNote = MusicTable2._0.Properties.Resources.wholeNote;
+            quarterNote = MusicTable2._0.Properties.Resources.Quarternote;
+            eightNote = MusicTable2._0.Properties.Resources.Eighthnote;
 
+            var star1LevelBoxes = new List<PictureBox> { star1Level1,
+                                                      star2Level1,
+                                                      star3Level1,
+                                                      star1Level2,
+                                                      star2Level2,
+                                                      star3Level2,
+                                                      star1Level3,
+                                                      star2Level3,
+                                                      star3Level3,
+                                                      star1Level4,
+                                                      star2Level4,
+                                                      star3Level4,};
+            //set the image of the stars
+            for (int i = 0; i < 12; i++)
+            {
+                star1LevelBoxes[i].Image = star;
+            }
 
+            //set the image of the pictureboxses
+            noteBox.Image = wholeNote;
+            noteBox2.Image = halfNote;
+            noteBox22.Image = halfNote;
+            noteBox3.Image = quarterNote;
+            noteBox32.Image = quarterNote;
+            noteBox33.Image = quarterNote;
+            noteBox34.Image = quarterNote;
+            noteBox4.Image = eightNote;
+            noteBox42.Image = eightNote;
+            noteBox43.Image = eightNote;
+            noteBox44.Image = eightNote;
+
+            niveau1Lock.Image = unlock;
+            niveau2Lock.Image = _lock;
+            niveau3Lock.Image = _lock;
+            niveau4Lock.Image = _lock;
         }
         private delegate void InvokeDelegate();
         public void StartStar()
@@ -60,7 +112,7 @@ namespace MusicTable2._0
 
         public int controlValue = 1;
         
-        
+        //coordinates for the notes 
         int[] collum = new int[4]  { 824, 630,  427, 230  };
         int[] row = new int[9] { 565, 520, 470, 425, 380, 335, 290, 245, 200 };
 
@@ -68,47 +120,45 @@ namespace MusicTable2._0
         //play Button Click event
         public void pictureBox6_Click(object sender, EventArgs e)
         {
+            //run the StarControl function when play button is clicked
             StarControl();
             controlValue++;
             
         }
+
         // current Niveau label
         private void label6_Click(object sender, EventArgs e)
         {
             
         }
+
         // Lock click event Start
         private void pictureBox1_Click(object sender, EventArgs e)
         {
+            //switch to lvl 1
             showCurrentLevelLabel.Text = "Niveau 1";
-
              NiveauSelect(1); 
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
+            //switch to lvl 2
             showCurrentLevelLabel.Text = "Niveau 2";
-
-           
-
              NiveauSelect(2);
         }
 
         private void pictureBox3_Click(object sender, EventArgs e)
         {
+            //switch to lvl 3
             showCurrentLevelLabel.Text = "Niveau 3";
-
-            
-
             NiveauSelect(3);
         }
         
         private void pictureBox4_Click(object sender, EventArgs e)
         {
+            //switch to lvl 4
             showCurrentLevelLabel.Text = "Niveau 4";
-
             NiveauSelect(4);
-            
         }
         // Lock click event End
 
@@ -121,7 +171,7 @@ namespace MusicTable2._0
             if (controlValue == 1)
             {
                 //fills in the stars
-                star1Level1.Image = Properties.Resources.StarYellow;
+                star1Level1.Image = starYellow;;
                
                 //new random note location 
                NiveauSelect(1);
@@ -129,7 +179,7 @@ namespace MusicTable2._0
             if (controlValue == 2)
             {
                 //fills in the stars
-                star2Level1.Image = Properties.Resources.StarYellow;
+                star2Level1.Image = starYellow;;
 
                 //new random note location 
                 NiveauSelect(1);
@@ -137,10 +187,10 @@ namespace MusicTable2._0
             if (controlValue == 3)
             {
                 //fills in the stars
-                star3Level1.Image = Properties.Resources.StarYellow;
+                star3Level1.Image = starYellow;;
 
                 //changes the lovk picture to the unlock picture
-                niveau2Lock.Image = Properties.Resources.Unlock;
+                niveau2Lock.Image = unlock;
 
                 // changes the Current level label 
                 showCurrentLevelLabel.Text = "Niveau 2";
@@ -173,7 +223,7 @@ namespace MusicTable2._0
             if (controlValue == 4)
             {
                 //fills in the stars
-                star1Level2.Image = Properties.Resources.StarYellow;
+                star1Level2.Image = starYellow;;
 
                 // new random note location 
                 NiveauSelect(2);
@@ -181,7 +231,7 @@ namespace MusicTable2._0
             if (controlValue == 5)
             {
                 //fills in the stars
-                star2Level2.Image = Properties.Resources.StarYellow;
+                star2Level2.Image = starYellow;;
 
                 //new random note location 
                 NiveauSelect(2);
@@ -190,10 +240,10 @@ namespace MusicTable2._0
             if (controlValue == 6)
             {
                 //fills in the stars
-                star3Level2.Image = Properties.Resources.StarYellow;
+                star3Level2.Image = starYellow;;
 
                 //changes the lovk picture to the unlock picture
-                niveau3Lock.Image = Properties.Resources.Unlock;
+                niveau3Lock.Image = unlock;
 
                 // changes the Current level label 
                 showCurrentLevelLabel.Text = "Niveau 3";
@@ -225,7 +275,7 @@ namespace MusicTable2._0
             if (controlValue == 7)
             {
                 //fills in the stars
-                star1Level3.Image = Properties.Resources.StarYellow;
+                star1Level3.Image = starYellow;;
 
                 //new random note location 
                 NiveauSelect(3);
@@ -233,7 +283,7 @@ namespace MusicTable2._0
             if (controlValue == 8)
             {
                 //fills in the stars
-                star2Level3.Image = Properties.Resources.StarYellow;
+                star2Level3.Image = starYellow;;
 
                 //new random note location 
                 NiveauSelect(3);
@@ -241,10 +291,10 @@ namespace MusicTable2._0
             if (controlValue == 9)
             {
                 //fills in the stars
-                star3Level3.Image = Properties.Resources.StarYellow;
+                star3Level3.Image = starYellow;;
 
                 //changes the lovk picture to the unlock picture
-                niveau4Lock.Image = Properties.Resources.Unlock;
+                niveau4Lock.Image = unlock;
 
                 // changes the Current level label 
                 showCurrentLevelLabel.Text = "Niveau 4";
@@ -276,7 +326,7 @@ namespace MusicTable2._0
             if (controlValue == 10)
             {
                 //fills in the stars
-                star1Level4.Image = Properties.Resources.StarYellow;
+                star1Level4.Image = starYellow;;
 
                 //new random note location 
                 NiveauSelect(4);
@@ -284,7 +334,7 @@ namespace MusicTable2._0
             if (controlValue == 11)
             {
                 //fills in the stars
-                star2Level4.Image = Properties.Resources.StarYellow;
+                star2Level4.Image = starYellow;;
 
                 //new random note location 
                 NiveauSelect(4);
@@ -292,7 +342,7 @@ namespace MusicTable2._0
             if (controlValue == 12)
             {
                 //fills in the stars
-                star3Level4.Image = Properties.Resources.StarYellow;
+                star3Level4.Image = starYellow;;
 
                 //hide the notes for the fourth lvl
                 noteBox4.Visible = false;

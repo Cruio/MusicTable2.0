@@ -113,6 +113,16 @@ namespace MusicTable2._0.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Eighthnote {
+            get {
+                object obj = ResourceManager.GetObject("Eighthnote", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap GClef {
             get {
                 object obj = ResourceManager.GetObject("GClef", resourceCulture);
@@ -126,6 +136,16 @@ namespace MusicTable2._0.Properties {
         internal static System.Drawing.Bitmap Grid {
             get {
                 object obj = ResourceManager.GetObject("Grid", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Halfnote {
+            get {
+                object obj = ResourceManager.GetObject("Halfnote", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -273,6 +293,16 @@ namespace MusicTable2._0.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Quarternote {
+            get {
+                object obj = ResourceManager.GetObject("Quarternote", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Star {
             get {
                 object obj = ResourceManager.GetObject("Star", resourceCulture);
@@ -296,6 +326,16 @@ namespace MusicTable2._0.Properties {
         internal static System.Drawing.Bitmap StarYellow {
             get {
                 object obj = ResourceManager.GetObject("StarYellow", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap TemplateGame {
+            get {
+                object obj = ResourceManager.GetObject("TemplateGame", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -398,6 +438,16 @@ namespace MusicTable2._0.Properties {
         internal static System.IO.UnmanagedMemoryStream W9 {
             get {
                 return ResourceManager.GetStream("W9", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap wholeNote {
+            get {
+                object obj = ResourceManager.GetObject("wholeNote", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
     }
