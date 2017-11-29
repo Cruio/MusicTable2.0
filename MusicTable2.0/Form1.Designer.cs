@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.niveau1Lock = new System.Windows.Forms.PictureBox();
             this.niveau2Lock = new System.Windows.Forms.PictureBox();
             this.niveau3Lock = new System.Windows.Forms.PictureBox();
@@ -104,7 +103,6 @@
             this.niveau1Lock.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.niveau1Lock.BackColor = System.Drawing.Color.Transparent;
             this.niveau1Lock.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.niveau1Lock.Image = global::MusicTable2._0.Properties.Resources.Unlock;
             this.niveau1Lock.Location = new System.Drawing.Point(408, 72);
             this.niveau1Lock.Name = "niveau1Lock";
             this.niveau1Lock.Size = new System.Drawing.Size(111, 76);
@@ -119,7 +117,6 @@
             this.niveau2Lock.BackColor = System.Drawing.Color.Transparent;
             this.niveau2Lock.Cursor = System.Windows.Forms.Cursors.Hand;
             this.niveau2Lock.Enabled = false;
-            this.niveau2Lock.Image = global::MusicTable2._0.Properties.Resources.Lock;
             this.niveau2Lock.Location = new System.Drawing.Point(525, 72);
             this.niveau2Lock.Name = "niveau2Lock";
             this.niveau2Lock.Size = new System.Drawing.Size(111, 76);
@@ -134,7 +131,6 @@
             this.niveau3Lock.BackColor = System.Drawing.Color.Transparent;
             this.niveau3Lock.Cursor = System.Windows.Forms.Cursors.Hand;
             this.niveau3Lock.Enabled = false;
-            this.niveau3Lock.Image = global::MusicTable2._0.Properties.Resources.Lock;
             this.niveau3Lock.Location = new System.Drawing.Point(642, 72);
             this.niveau3Lock.Name = "niveau3Lock";
             this.niveau3Lock.Size = new System.Drawing.Size(111, 76);
@@ -149,7 +145,6 @@
             this.niveau4Lock.BackColor = System.Drawing.Color.Transparent;
             this.niveau4Lock.Cursor = System.Windows.Forms.Cursors.Hand;
             this.niveau4Lock.Enabled = false;
-            this.niveau4Lock.Image = global::MusicTable2._0.Properties.Resources.Lock;
             this.niveau4Lock.Location = new System.Drawing.Point(759, 72);
             this.niveau4Lock.Name = "niveau4Lock";
             this.niveau4Lock.Size = new System.Drawing.Size(111, 76);
@@ -275,12 +270,11 @@
             this.flowLayoutPanel1.Controls.Add(this.star3Level4);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(13, 49);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(251, 94);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(245, 94);
             this.flowLayoutPanel1.TabIndex = 13;
             // 
             // star1Level1
             // 
-            this.star1Level1.Image = global::MusicTable2._0.Properties.Resources.Star;
             this.star1Level1.Location = new System.Drawing.Point(3, 3);
             this.star1Level1.Name = "star1Level1";
             this.star1Level1.Size = new System.Drawing.Size(74, 64);
@@ -290,7 +284,6 @@
             // 
             // star2Level1
             // 
-            this.star2Level1.Image = global::MusicTable2._0.Properties.Resources.Star;
             this.star2Level1.Location = new System.Drawing.Point(83, 3);
             this.star2Level1.Name = "star2Level1";
             this.star2Level1.Size = new System.Drawing.Size(74, 64);
@@ -301,7 +294,6 @@
             // star3Level1
             // 
             this.star3Level1.Enabled = false;
-            this.star3Level1.Image = global::MusicTable2._0.Properties.Resources.Star;
             this.star3Level1.Location = new System.Drawing.Point(163, 3);
             this.star3Level1.Name = "star3Level1";
             this.star3Level1.Size = new System.Drawing.Size(74, 64);
@@ -311,7 +303,6 @@
             // 
             // star1Level2
             // 
-            this.star1Level2.Image = global::MusicTable2._0.Properties.Resources.Star;
             this.star1Level2.Location = new System.Drawing.Point(3, 73);
             this.star1Level2.Name = "star1Level2";
             this.star1Level2.Size = new System.Drawing.Size(74, 64);
@@ -322,7 +313,6 @@
             // 
             // star2Level2
             // 
-            this.star2Level2.Image = global::MusicTable2._0.Properties.Resources.Star;
             this.star2Level2.Location = new System.Drawing.Point(83, 73);
             this.star2Level2.Name = "star2Level2";
             this.star2Level2.Size = new System.Drawing.Size(74, 64);
@@ -334,7 +324,6 @@
             // star3Level2
             // 
             this.star3Level2.Enabled = false;
-            this.star3Level2.Image = global::MusicTable2._0.Properties.Resources.Star;
             this.star3Level2.Location = new System.Drawing.Point(163, 73);
             this.star3Level2.Name = "star3Level2";
             this.star3Level2.Size = new System.Drawing.Size(74, 64);
@@ -345,7 +334,6 @@
             // 
             // star1Level3
             // 
-            this.star1Level3.Image = global::MusicTable2._0.Properties.Resources.Star;
             this.star1Level3.Location = new System.Drawing.Point(3, 143);
             this.star1Level3.Name = "star1Level3";
             this.star1Level3.Size = new System.Drawing.Size(74, 64);
@@ -356,7 +344,6 @@
             // 
             // star2Level3
             // 
-            this.star2Level3.Image = global::MusicTable2._0.Properties.Resources.Star;
             this.star2Level3.Location = new System.Drawing.Point(83, 143);
             this.star2Level3.Name = "star2Level3";
             this.star2Level3.Size = new System.Drawing.Size(74, 64);
@@ -368,7 +355,6 @@
             // star3Level3
             // 
             this.star3Level3.Enabled = false;
-            this.star3Level3.Image = global::MusicTable2._0.Properties.Resources.Star;
             this.star3Level3.Location = new System.Drawing.Point(163, 143);
             this.star3Level3.Name = "star3Level3";
             this.star3Level3.Size = new System.Drawing.Size(74, 64);
@@ -379,7 +365,6 @@
             // 
             // star1Level4
             // 
-            this.star1Level4.Image = global::MusicTable2._0.Properties.Resources.Star;
             this.star1Level4.Location = new System.Drawing.Point(3, 213);
             this.star1Level4.Name = "star1Level4";
             this.star1Level4.Size = new System.Drawing.Size(74, 64);
@@ -390,7 +375,6 @@
             // 
             // star2Level4
             // 
-            this.star2Level4.Image = global::MusicTable2._0.Properties.Resources.Star;
             this.star2Level4.Location = new System.Drawing.Point(83, 213);
             this.star2Level4.Name = "star2Level4";
             this.star2Level4.Size = new System.Drawing.Size(74, 64);
@@ -402,7 +386,6 @@
             // star3Level4
             // 
             this.star3Level4.Enabled = false;
-            this.star3Level4.Image = global::MusicTable2._0.Properties.Resources.Star;
             this.star3Level4.Location = new System.Drawing.Point(163, 213);
             this.star3Level4.Name = "star3Level4";
             this.star3Level4.Size = new System.Drawing.Size(74, 64);
@@ -415,7 +398,6 @@
             // 
             this.noteBox.BackColor = System.Drawing.Color.Transparent;
             this.noteBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.noteBox.Image = ((System.Drawing.Image)(resources.GetObject("noteBox.Image")));
             this.noteBox.Location = new System.Drawing.Point(20, 190);
             this.noteBox.Name = "noteBox";
             this.noteBox.Size = new System.Drawing.Size(195, 71);
@@ -428,7 +410,7 @@
             this.showCurrentGameState.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.showCurrentGameState.Image = ((System.Drawing.Image)(resources.GetObject("showCurrentGameState.Image")));
+            this.showCurrentGameState.Image = global::MusicTable2._0.Properties.Resources.TemplateGame;
             this.showCurrentGameState.Location = new System.Drawing.Point(12, 149);
             this.showCurrentGameState.Name = "showCurrentGameState";
             this.showCurrentGameState.Size = new System.Drawing.Size(1221, 580);
@@ -440,7 +422,6 @@
             // 
             this.noteBox2.BackColor = System.Drawing.Color.Transparent;
             this.noteBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.noteBox2.Image = ((System.Drawing.Image)(resources.GetObject("noteBox2.Image")));
             this.noteBox2.Location = new System.Drawing.Point(200, 160);
             this.noteBox2.Name = "noteBox2";
             this.noteBox2.Size = new System.Drawing.Size(129, 262);
@@ -453,7 +434,6 @@
             // 
             this.noteBox22.BackColor = System.Drawing.Color.Transparent;
             this.noteBox22.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.noteBox22.Image = ((System.Drawing.Image)(resources.GetObject("noteBox22.Image")));
             this.noteBox22.Location = new System.Drawing.Point(335, 160);
             this.noteBox22.Name = "noteBox22";
             this.noteBox22.Size = new System.Drawing.Size(129, 262);
@@ -466,7 +446,6 @@
             // 
             this.noteBox3.BackColor = System.Drawing.Color.Transparent;
             this.noteBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.noteBox3.Image = ((System.Drawing.Image)(resources.GetObject("noteBox3.Image")));
             this.noteBox3.Location = new System.Drawing.Point(470, 160);
             this.noteBox3.Name = "noteBox3";
             this.noteBox3.Size = new System.Drawing.Size(129, 262);
@@ -479,7 +458,6 @@
             // 
             this.noteBox34.BackColor = System.Drawing.Color.Transparent;
             this.noteBox34.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.noteBox34.Image = ((System.Drawing.Image)(resources.GetObject("noteBox34.Image")));
             this.noteBox34.Location = new System.Drawing.Point(875, 160);
             this.noteBox34.Name = "noteBox34";
             this.noteBox34.Size = new System.Drawing.Size(129, 262);
@@ -492,7 +470,6 @@
             // 
             this.noteBox33.BackColor = System.Drawing.Color.Transparent;
             this.noteBox33.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.noteBox33.Image = ((System.Drawing.Image)(resources.GetObject("noteBox33.Image")));
             this.noteBox33.Location = new System.Drawing.Point(740, 160);
             this.noteBox33.Name = "noteBox33";
             this.noteBox33.Size = new System.Drawing.Size(129, 262);
@@ -505,7 +482,6 @@
             // 
             this.noteBox32.BackColor = System.Drawing.Color.Transparent;
             this.noteBox32.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.noteBox32.Image = ((System.Drawing.Image)(resources.GetObject("noteBox32.Image")));
             this.noteBox32.Location = new System.Drawing.Point(605, 160);
             this.noteBox32.Name = "noteBox32";
             this.noteBox32.Size = new System.Drawing.Size(129, 262);
@@ -518,7 +494,6 @@
             // 
             this.noteBox4.BackColor = System.Drawing.Color.Transparent;
             this.noteBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.noteBox4.Image = ((System.Drawing.Image)(resources.GetObject("noteBox4.Image")));
             this.noteBox4.Location = new System.Drawing.Point(20, 363);
             this.noteBox4.Name = "noteBox4";
             this.noteBox4.Size = new System.Drawing.Size(174, 263);
@@ -531,7 +506,6 @@
             // 
             this.noteBox42.BackColor = System.Drawing.Color.Transparent;
             this.noteBox42.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.noteBox42.Image = ((System.Drawing.Image)(resources.GetObject("noteBox42.Image")));
             this.noteBox42.Location = new System.Drawing.Point(200, 363);
             this.noteBox42.Name = "noteBox42";
             this.noteBox42.Size = new System.Drawing.Size(174, 263);
@@ -544,7 +518,6 @@
             // 
             this.noteBox43.BackColor = System.Drawing.Color.Transparent;
             this.noteBox43.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.noteBox43.Image = ((System.Drawing.Image)(resources.GetObject("noteBox43.Image")));
             this.noteBox43.Location = new System.Drawing.Point(380, 363);
             this.noteBox43.Name = "noteBox43";
             this.noteBox43.Size = new System.Drawing.Size(174, 263);
@@ -557,7 +530,6 @@
             // 
             this.noteBox44.BackColor = System.Drawing.Color.Transparent;
             this.noteBox44.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.noteBox44.Image = ((System.Drawing.Image)(resources.GetObject("noteBox44.Image")));
             this.noteBox44.Location = new System.Drawing.Point(560, 363);
             this.noteBox44.Name = "noteBox44";
             this.noteBox44.Size = new System.Drawing.Size(174, 263);
