@@ -110,7 +110,7 @@ namespace MusicTable2._0
         //UI contorl values
 
 
-        public int controlValue = 1;
+        public int controlValue = 0;
         
         //coordinates for the notes 
         int[] collum = new int[4]  { 824, 630,  427, 230  };
