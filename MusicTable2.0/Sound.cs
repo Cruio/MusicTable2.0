@@ -24,7 +24,8 @@ namespace MusicTable2._0
         int duration;
 
         //playOrder is used to store the desired pitch and shape of a note. 
-        int[,] playOrder = new int[4, 2];
+
+        public int[,] playOrder = new int[4, 2];
 
         //startRecord is the function that starts playing sounds. If loopchecker = 0, that is no sound is currently being played, it initializes a new thread and makes it run
         //the function grammophone. It then starts said thread.
@@ -111,7 +112,7 @@ namespace MusicTable2._0
                 loopchecker = 1;
                 using (OutputDevice outDevice = new OutputDevice(0))
                 {
-                    for (int i = 0; i < 4; i++)
+                    for (int i = 3; i >-1; i--)
                     {
                         builder.Command = ChannelCommand.NoteOn;
                         builder.MidiChannel = 0;
