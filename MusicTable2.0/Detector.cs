@@ -1,20 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Diagnostics;
 using System.Drawing;
 using Emgu.CV;
 using Emgu.CV.CvEnum;
 using Emgu.CV.Structure;
-using System.Windows.Forms;
-using Emgu.CV.XImgproc;
-using Emgu.CV.XObjdetect;
 using Emgu.CV.Features2D;
-using Emgu.CV.UI;
 using Emgu.CV.Util;
-using System.Runtime.InteropServices;
+
 
 namespace MusicTable2._0
 {
@@ -29,7 +21,6 @@ namespace MusicTable2._0
         private SimpleBlobDetector detector = new SimpleBlobDetector();
         private VectorOfVectorOfPoint contours = new VectorOfVectorOfPoint();
         private Mat hierarchy = new Mat();
-        private bool[] hasChild;
         private int[,] notes;
         private int noteAmount = 0;
         private int[] requiredCols;
@@ -63,8 +54,12 @@ namespace MusicTable2._0
                 CvInvoke.MedianBlur(capture, capture, 5);
                 CvInvoke.Threshold(capture, capture, 215, 255, ThresholdType.Binary);
                 //Eroding and dilating to get rid of most of the noise
-                CvInvoke.Erode(capture, capture, CvInvoke.GetStructuringElement(ElementShape.Ellipse, size, point), point, 3, BorderType.Default, new MCvScalar(1.0));
-                CvInvoke.Dilate(capture, capture, CvInvoke.GetStructuringElement(ElementShape.Ellipse, size, point), point, 5, BorderType.Default, new MCvScalar(1.0));
+                CvInvoke.Erode(capture, capture, 
+                    CvInvoke.GetStructuringElement(ElementShape.Ellipse, size, point), 
+                    point, 3, BorderType.Default, new MCvScalar(1.0));
+                CvInvoke.Dilate(capture, capture, 
+                    CvInvoke.GetStructuringElement(ElementShape.Ellipse, size, point), 
+                    point, 5, BorderType.Default, new MCvScalar(1.0));
                 //Another median blur with a kernel size of 5 in order to smooth out the image and get rid of any remaining noise.
                 CvInvoke.MedianBlur(capture, capture, 5);
                 //Show capture in a named window
@@ -76,7 +71,8 @@ namespace MusicTable2._0
                 Features2DToolbox.DrawKeypoints(invertedCapture, keyPoints, captureWithKeypoints, new Bgr(0, 0, 255));
                 CvInvoke.NamedWindow("KeyPoints", NamedWindowType.AutoSize);
                 CvInvoke.Imshow("KeyPoints", captureWithKeypoints);
-                //Loop through all the keypoints found by the SimpleBlobDetector. If there is one on the play button, it will add 1 to the counter and the thread will sleep for 1/30 of a second.
+                //Loop through all the keypoints found by the SimpleBlobDetector. 
+                //If there is one on the play button, it will add 1 to the counter and the thread will sleep for 1/30 of a second.
                 for (int i = 0; i < keyPoints.Size; i++)
                 {
                     int x;
@@ -118,7 +114,8 @@ namespace MusicTable2._0
             Mat blobDetectMat = new Mat();
             VectorOfKeyPoint keyPoints;
             //Find contours.
-            CvInvoke.FindContours(capture, contours, hierarchy, RetrType.Tree, ChainApproxMethod.ChainApproxSimple, new Point(0, 0));
+            CvInvoke.FindContours(capture, contours, hierarchy, RetrType.Tree, 
+                ChainApproxMethod.ChainApproxSimple, new Point(0, 0));
             int reqNoteType;
             int reqNoteAmount;
             Debug.WriteLine(StartScreen.gameForm.controlValue);
@@ -180,7 +177,8 @@ namespace MusicTable2._0
                 {
                     Debug.WriteLine(CvInvoke.ContourArea(contours[i]));
                     Debug.WriteLine(CvInvoke.ArcLength(contours[i], true));
-                    if (CvInvoke.ContourArea(contours[i]) > 1200 && CvInvoke.ContourArea(contours[i]) < 2600 && CvInvoke.ArcLength(contours[i], true) < 220)
+                    if (CvInvoke.ContourArea(contours[i]) > 1200 && CvInvoke.ContourArea(contours[i]) < 2600 
+                        && CvInvoke.ArcLength(contours[i], true) < 220)
                     {
                         noteIndex--;
                         notes[noteIndex, 0] = 1;
@@ -206,11 +204,16 @@ namespace MusicTable2._0
             int[] requiredRow = StartScreen.gameForm.rowPos;
             int colWidth = 97;
             blobDetectMat = capture;
-            //If it is a quarter or eighth note, it will first erode it with a large size and then dilate it to get rid of the stems. It is then inverted.
+            //If it is a quarter or eighth note, it will first erode it with a 
+            //large size and then dilate it to get rid of the stems. It is then inverted.
             if (reqNoteType == 3 || reqNoteType == 4)
             {
-                CvInvoke.Erode(capture, blobDetectMat, CvInvoke.GetStructuringElement(ElementShape.Cross, new Size(27, 27), new Point(13, 13)), new Point(1, 1), 1, BorderType.Default, new MCvScalar(1));
-                CvInvoke.Dilate(capture, blobDetectMat, CvInvoke.GetStructuringElement(ElementShape.Ellipse, new Size(27, 27), new Point(13, 13)), new Point(1, 1), 1, BorderType.Default, new MCvScalar(1));
+                CvInvoke.Erode(capture, blobDetectMat, 
+                    CvInvoke.GetStructuringElement(ElementShape.Cross, new Size(27, 27), new Point(13, 13)), 
+                    new Point(1, 1), 1, BorderType.Default, new MCvScalar(1));
+                CvInvoke.Dilate(capture, blobDetectMat, 
+                    CvInvoke.GetStructuringElement(ElementShape.Ellipse, new Size(27, 27), new Point(13, 13)), 
+                    new Point(1, 1), 1, BorderType.Default, new MCvScalar(1));
                 CvInvoke.BitwiseNot(capture, blobDetectMat);
             }
             //Detecting blobs and displaying keypoints.
@@ -255,14 +258,19 @@ namespace MusicTable2._0
                     {
                         if (rows % 2 == 0)
                         {
-                            //Checking whether detected blobs are on a line. Note, that if a note is detected, and something else that is perceived as a blob is placed in the correct position, it would still count as right. In theory.
+                            /*Checking whether detected blobs are on a line. 
+                            Note, that if a note is detected, and something else that is perceived as a 
+                            blob is placed in the correct position, it would still count as right. In theory.*/
                             if (x > firstX && x < firstX + line && y > firstY && y < firstY + colWidth)
                             {
                                 Debug.WriteLine("There's a note here: " + rows + " " + cols);
                                 for (int j = 0; j < requiredCols.Length; j++)
                                 {
-                                    //Checking if the note matches all the criteria. Send values to the Sound class if so, and add 1 to the correct note counter.
-                                    if (cols == requiredCols[j] && (rows == requiredRow[0] || rows == requiredRow[1] || rows == requiredRow[2] || rows == requiredRow[3]) && notes[cols, 0] == reqNoteType && noteAmount == reqNoteAmount)
+                                    //Checking if the note matches all the criteria. 
+                                    //Send values to the Sound class if so, and add 1 to the correct note counter.
+                                    if (cols == requiredCols[j] 
+                                        && (rows == requiredRow[0] || rows == requiredRow[1] || rows == requiredRow[2] || rows == requiredRow[3]) 
+                                        && notes[cols, 0] == reqNoteType && noteAmount == reqNoteAmount)
                                     {
                                         Debug.WriteLine("Correct position and type!");
                                         sound.playOrder[cols, 0] = notes[cols, 0];
@@ -281,7 +289,9 @@ namespace MusicTable2._0
                                 Debug.WriteLine("There's a note here:" + rows + " " + cols);
                                 for (int j = 0; j < requiredCols.Length; j++)
                                 {
-                                    if (cols == requiredCols[j] && (rows == requiredRow[0] || rows == requiredRow[1] || rows == requiredRow[2] || rows == requiredRow[3]) && notes[cols, 0] == reqNoteType && noteAmount == reqNoteAmount)
+                                    if (cols == requiredCols[j] 
+                                        && (rows == requiredRow[0] || rows == requiredRow[1] || rows == requiredRow[2] || rows == requiredRow[3]) 
+                                        && notes[cols, 0] == reqNoteType && noteAmount == reqNoteAmount)
                                     {
                                         Debug.WriteLine("Correct position and type!");
                                         sound.playOrder[cols, 0] = notes[cols, 0];
