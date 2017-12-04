@@ -7,8 +7,6 @@ using System.Media;
 using System.Threading;
 using Sanford.Multimedia.Midi;
 
-
-
 namespace MusicTable2._0
 {
     class Sound
@@ -24,11 +22,10 @@ namespace MusicTable2._0
         int duration;
 
         //playOrder is used to store the desired pitch and shape of a note. 
-
         public int[,] playOrder = new int[4, 2];
 
-        //startRecord is the function that starts playing sounds. If loopchecker = 0, that is no sound is currently being played, it initializes a new thread and makes it run
-        //the function grammophone. It then starts said thread.
+        //startRecord is the function that starts playing sounds. If loopchecker = 0, that is no sound is currently being played, 
+        //it initializes a new thread and makes it run the function grammophone. It then starts said thread.
         public void startRecord()
         {
             if (loopchecker == 0)
@@ -37,13 +34,11 @@ namespace MusicTable2._0
                 wavPlayer.Start();
             }
         }
-
         //checkSound assigns the desired values to the ChannelMessageBuilder object named builder.
         public void checkSound(int shape, int pitch)
         {
                 //Data2 is the volume of the sound, with 127 being maximum.
                 builder.Data2 = 127;
-
                 if (shape == 1)
                 {
                     duration = 1;
@@ -64,7 +59,6 @@ namespace MusicTable2._0
                 {
                 duration = 2000;
                 }
-
 
                 //Data1 is the pitch of the sound.
                 switch (pitch)

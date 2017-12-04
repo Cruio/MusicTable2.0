@@ -38,7 +38,7 @@ namespace MusicTable2._0
             VideoCapture cap;
             try
             {
-                cap = new VideoCapture(0);
+                cap = new VideoCapture(2);
             }
             catch (NullReferenceException e)
             {
@@ -294,7 +294,7 @@ namespace MusicTable2._0
                 StartScreen.gameForm.controlValue++;
             }
             StartScreen.gameForm.StartStar();
-            System.Threading.Thread.Sleep(8000);
+            System.Threading.Thread.Sleep(5000);
         }
         bool CheckChild(int i)
         {
