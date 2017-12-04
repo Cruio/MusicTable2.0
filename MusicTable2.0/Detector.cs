@@ -202,7 +202,7 @@ namespace MusicTable2._0
             //Get variably from the form to check where the notes are supposed to be.
             int correctNoteCounter = 0;
             int[] requiredRow = StartScreen.gameForm.rowPos;
-            int colWidth = 97;
+            int colWidth = 90;
             blobDetectMat = capture;
             //If it is a quarter or eighth note, it will first erode it with a 
             //large size and then dilate it to get rid of the stems. It is then inverted.
@@ -230,7 +230,7 @@ namespace MusicTable2._0
                 int cols = 0;
                 int line = 12;
                 int space = 36;
-                int firstX = 85;
+                int firstX = 100;
                 if (reqNoteType == 3 || reqNoteType == 4)
                 {
                     x += 21;
@@ -238,20 +238,20 @@ namespace MusicTable2._0
                 //Using a double while loop to go through all the columns and rows.
                 while (cols < 4)
                 {
-                    line = 12;
-                    space = 36;
+                    line = 15;
+                    space = 35;
                     firstX = 85;
                     if (reqNoteType == 3 || reqNoteType == 4)
                     {
-                        line = 13;
-                        space = 36;
-                        firstX = 80;
+                        line = 15;
+                        space = 35;
+                        firstX = 95;
                     }
                     if (cols == 0)
                     {
-                            line = 14;
-                            space = 36;
-                            firstX = 80;
+                            line = 15;
+                            space = 35;
+                            firstX = 95;
                     }
                     int rows = 0;
                     while (rows < 9)
@@ -269,7 +269,7 @@ namespace MusicTable2._0
                                     //Checking if the note matches all the criteria. 
                                     //Send values to the Sound class if so, and add 1 to the correct note counter.
                                     if (cols == requiredCols[j] 
-                                        && (rows == requiredRow[0] || rows == requiredRow[1] || rows == requiredRow[2] || rows == requiredRow[3]) 
+                                        && (rows == requiredRow[cols]) 
                                         && notes[cols, 0] == reqNoteType && noteAmount == reqNoteAmount)
                                     {
                                         Debug.WriteLine("Correct position and type!");
@@ -290,7 +290,7 @@ namespace MusicTable2._0
                                 for (int j = 0; j < requiredCols.Length; j++)
                                 {
                                     if (cols == requiredCols[j] 
-                                        && (rows == requiredRow[0] || rows == requiredRow[1] || rows == requiredRow[2] || rows == requiredRow[3]) 
+                                        && (rows == requiredRow[cols]) 
                                         && notes[cols, 0] == reqNoteType && noteAmount == reqNoteAmount)
                                     {
                                         Debug.WriteLine("Correct position and type!");

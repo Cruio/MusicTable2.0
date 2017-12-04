@@ -168,7 +168,7 @@ namespace MusicTable2._0
         public void StarControl()
         {
 
-            if (controlValue == 1)
+            if (controlValue == 1||controlValue==0)
             {
                 //fills in the stars
                 star1Level1.Image = starYellow;;
@@ -483,13 +483,13 @@ namespace MusicTable2._0
                 star2Level4.Visible = false;
                 star3Level4.Visible = false;
 
-                noteBox3.Location = new Point(collum[0] + 20, row[randomRow] - 185);
+                noteBox3.Location = new Point(collum[0] + 20, row[randomRow4] - 185);
     
-                noteBox32.Location = new Point(collum[1] + 20, row[randomRow2] - 185);
+                noteBox32.Location = new Point(collum[1] + 20, row[randomRow3] - 185);
               
-                noteBox33.Location = new Point(collum[2] + 20, row[randomRow3] - 185);
+                noteBox33.Location = new Point(collum[2] + 20, row[randomRow2] - 185);
             
-                noteBox34.Location = new Point(collum[3] + 20, row[randomRow4] - 185);
+                noteBox34.Location = new Point(collum[3] + 20, row[randomRow] - 185);
             }
             if (setLvl == 4)
             {
@@ -526,13 +526,13 @@ namespace MusicTable2._0
                 star2Level4.Visible = true;
                 star3Level4.Visible = true;
 
-                noteBox4.Location = new Point(collum[0] + 25, row[randomRow] - 187);
+                noteBox4.Location = new Point(collum[0] + 25, row[randomRow4] - 187);
              
-                noteBox42.Location = new Point(collum[1] + 25, row[randomRow2] - 187);
+                noteBox42.Location = new Point(collum[1] + 25, row[randomRow3] - 187);
                
-                noteBox43.Location = new Point(collum[2] + 25, row[randomRow3] - 187);
+                noteBox43.Location = new Point(collum[2] + 25, row[randomRow2] - 187);
               
-                noteBox44.Location = new Point(collum[3] + 25, row[randomRow4] - 187);
+                noteBox44.Location = new Point(collum[3] + 25, row[randomRow] - 187);
             }
 
 
