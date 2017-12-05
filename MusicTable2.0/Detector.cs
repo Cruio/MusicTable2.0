@@ -13,6 +13,7 @@ namespace MusicTable2._0
     class Detector
     {
         //Define basic necessary variables. Instantiate some objects.
+
         Sound sound = new Sound();
         Mat capture = new Mat();
         Mat invertedCapture = new Mat();
@@ -24,7 +25,14 @@ namespace MusicTable2._0
         private int[,] notes;
         private int noteAmount = 0;
         private int[] requiredCols;
-
+        bool coordsLocked = false;
+        int firstY = 60;
+        int colWidth = 90;
+        int line = 12;
+        int space = 36;
+        int firstX = 100;
+        Size size = new Size(2, 2);
+        Point point = new Point(1, 1);
         public int Looper()
         {
             VideoCapture cap;
@@ -38,11 +46,11 @@ namespace MusicTable2._0
                 Debug.WriteLine(e);
                 return 1;
             }
+            CvInvoke.WaitKey();
             //Check if camera is opened. If not, exit the looper with code 2.
             if (!cap.IsOpened) return 2;
             int counter = 0;
-            Size size = new Size(2, 2);
-            Point point = new Point(1, 1);
+            
             MCvScalar scalar = new MCvScalar(1);
             //Create infinite loop for checking whether there is a blob on the play button
             while (true)
@@ -54,11 +62,11 @@ namespace MusicTable2._0
                 CvInvoke.MedianBlur(capture, capture, 5);
                 CvInvoke.Threshold(capture, capture, 215, 255, ThresholdType.Binary);
                 //Eroding and dilating to get rid of most of the noise
-                CvInvoke.Erode(capture, capture, 
-                    CvInvoke.GetStructuringElement(ElementShape.Ellipse, size, point), 
+                CvInvoke.Erode(capture, capture,
+                    CvInvoke.GetStructuringElement(ElementShape.Ellipse, size, point),
                     point, 3, BorderType.Default, new MCvScalar(1.0));
-                CvInvoke.Dilate(capture, capture, 
-                    CvInvoke.GetStructuringElement(ElementShape.Ellipse, size, point), 
+                CvInvoke.Dilate(capture, capture,
+                    CvInvoke.GetStructuringElement(ElementShape.Ellipse, size, point),
                     point, 5, BorderType.Default, new MCvScalar(1.0));
                 //Another median blur with a kernel size of 5 in order to smooth out the image and get rid of any remaining noise.
                 CvInvoke.MedianBlur(capture, capture, 5);
@@ -67,6 +75,10 @@ namespace MusicTable2._0
                 CvInvoke.Imshow("source", capture);
                 //Invert capture to check for blobs. Use SimpleBlobDetector to find them, then show them in a separate window.
                 CvInvoke.BitwiseNot(capture, invertedCapture);
+                if (!coordsLocked)
+                {
+                    LockCoords();
+                }
                 VectorOfKeyPoint keyPoints = new VectorOfKeyPoint(detector.Detect(invertedCapture));
                 Features2DToolbox.DrawKeypoints(invertedCapture, keyPoints, captureWithKeypoints, new Bgr(0, 0, 255));
                 CvInvoke.NamedWindow("KeyPoints", NamedWindowType.AutoSize);
@@ -81,7 +93,7 @@ namespace MusicTable2._0
                     y = (int)keyPoints[i].Point.Y;
                     Debug.WriteLine(x);
                     Debug.WriteLine(y);
-                    if (x < 490 && x > 415 && y < 115 && y > 45)
+                    if (466+37.5 > x && 466-37.5 < x && y < 65+37.5 && y > 65-37.5)
                     {
                         counter++;
                         System.Threading.Thread.Sleep(1000 / 30);
@@ -98,6 +110,7 @@ namespace MusicTable2._0
             }
             return 0;
         }
+        
         private void CheckNotes()
         {
             noteAmount = 0;
@@ -202,7 +215,7 @@ namespace MusicTable2._0
             //Get variably from the form to check where the notes are supposed to be.
             int correctNoteCounter = 0;
             int[] requiredRow = StartScreen.gameForm.rowPos;
-            int colWidth = 90;
+            
             blobDetectMat = capture;
             //If it is a quarter or eighth note, it will first erode it with a 
             //large size and then dilate it to get rid of the stems. It is then inverted.
@@ -226,33 +239,32 @@ namespace MusicTable2._0
             {
                 int x = (int)keyPoints[i].Point.X;
                 int y = (int)keyPoints[i].Point.Y;
-                int firstY = 60;
-                int cols = 0;
-                int line = 12;
-                int space = 36;
-                int firstX = 100;
+                
+                int firstYContainer = firstY;
                 if (reqNoteType == 3 || reqNoteType == 4)
                 {
                     x += 21;
                 }
+                int cols = 0;
                 //Using a double while loop to go through all the columns and rows.
                 while (cols < 4)
                 {
-                    line = 15;
-                    space = 35;
-                    firstX = 85;
-                    if (reqNoteType == 3 || reqNoteType == 4)
-                    {
-                        line = 15;
-                        space = 35;
-                        firstX = 95;
-                    }
-                    if (cols == 0)
-                    {
-                            line = 15;
-                            space = 35;
-                            firstX = 95;
-                    }
+                    int firstXContainer = firstX;
+                    //line = 15;
+                    //space = 35;
+                    //firstX = 85;
+                    //if (reqNoteType == 3 || reqNoteType == 4)
+                    //{
+                    //    line = 15;
+                    //    space = 35;
+                    //    firstX = 95;
+                    //}
+                    //if (cols == 0)
+                    //{
+                    //        line = 15;
+                    //        space = 35;
+                    //        firstX = 95;
+                    //}
                     int rows = 0;
                     while (rows < 9)
                     {
@@ -261,7 +273,7 @@ namespace MusicTable2._0
                             /*Checking whether detected blobs are on a line. 
                             Note, that if a note is detected, and something else that is perceived as a 
                             blob is placed in the correct position, it would still count as right. In theory.*/
-                            if (x > firstX && x < firstX + line && y > firstY && y < firstY + colWidth)
+                            if (x > firstXContainer && x < firstXContainer + line && y > firstYContainer && y < firstYContainer + colWidth)
                             {
                                 Debug.WriteLine("There's a note here: " + rows + " " + cols);
                                 for (int j = 0; j < requiredCols.Length; j++)
@@ -279,12 +291,12 @@ namespace MusicTable2._0
                                     }
                                 }
                             }
-                            firstX += line;
+                            firstXContainer += line;
                         }
                         else
                         {
                             //Same as above. Just for spaces.
-                            if (x > firstX && x < firstX + space && y > firstY && y < firstY + colWidth)
+                            if (x > firstXContainer && x < firstXContainer + space && y > firstYContainer && y < firstYContainer + colWidth)
                             {
                                 Debug.WriteLine("There's a note here:" + rows + " " + cols);
                                 for (int j = 0; j < requiredCols.Length; j++)
@@ -300,11 +312,11 @@ namespace MusicTable2._0
                                     }
                                 }
                             }
-                            firstX += space;
+                            firstXContainer += space;
                         }
                         rows++;
                     }
-                    firstY += colWidth;
+                    firstYContainer += colWidth;
                     cols++;
                 }
             }
@@ -380,6 +392,31 @@ namespace MusicTable2._0
 
             }
             return ret;
+        }
+        void LockCoords()
+        {
+            VectorOfKeyPoint keyPoints;
+            CvInvoke.WaitKey();
+            keyPoints =new VectorOfKeyPoint(detector.Detect(invertedCapture));
+            int highestX = 0;
+            int lowestX = 600;
+            int highestY = 0;
+            int lowestY = 600;
+            for (int i = 0; i < keyPoints.Size; i++)
+            {
+                int x = (int)keyPoints[i].Point.X;
+                int y = (int)keyPoints[i].Point.Y;
+                if (x > highestX) highestX = x;
+                if (y > highestY) highestY = y;
+                if (x < lowestX) lowestX = x;
+                if (y < lowestY) lowestY = y;
+            }
+            firstX = lowestX;
+            firstY = lowestY;
+            line = (highestX - lowestX) / 15;
+            space = (highestX - lowestX - line * 5) / 4;
+            colWidth = (highestY - lowestY) / 4;
+            coordsLocked = true;
         }
     }
 
