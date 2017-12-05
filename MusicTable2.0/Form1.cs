@@ -168,7 +168,7 @@ namespace MusicTable2._0
         public void StarControl()
         {
 
-            if (controlValue == 1)
+            if (controlValue == 1||controlValue==0)
             {
                 //fills in the stars
                 star1Level1.Image = starYellow;;
@@ -255,20 +255,6 @@ namespace MusicTable2._0
                 //Pause the game for 1,5 sec so you can see the star get filled in 
                 System.Threading.Thread.Sleep(1500);
 
-                //hide and show the stars that needs to be shown 
-                star1Level1.Visible = false;
-                star2Level1.Visible = false;
-                star3Level1.Visible = false;
-                star1Level2.Visible = false;
-                star2Level2.Visible = false;
-                star3Level2.Visible = false;
-                star1Level3.Visible = true;
-                star2Level3.Visible = true;
-                star3Level3.Visible = true;
-                star1Level4.Visible = false;
-                star2Level4.Visible = false;
-                star3Level4.Visible = false;
-
                 //new random note location 
                 NiveauSelect(3);
             }
@@ -305,20 +291,6 @@ namespace MusicTable2._0
 
                 //Pause the game for 1,5 sec so you can see the star get filled in 
                 System.Threading.Thread.Sleep(1500);
-
-                //hide and show the stars that needs to be shown 
-                star1Level1.Visible = false;
-                star2Level1.Visible = false;
-                star3Level1.Visible = false;
-                star1Level2.Visible = false;
-                star2Level2.Visible = false;
-                star3Level2.Visible = false;
-                star1Level3.Visible = false;
-                star2Level3.Visible = false;
-                star3Level3.Visible = false;
-                star1Level4.Visible = true;
-                star2Level4.Visible = true;
-                star3Level4.Visible = true;
 
                 //new random note location 
                 NiveauSelect(4);
@@ -413,21 +385,9 @@ namespace MusicTable2._0
                 ////hide the notes for the first lvl
                 noteBox.Visible = false;
 
-                //hides the note from second lvl
+                //shows the notes for the second lvl
                 noteBox2.Visible = true;
                 noteBox22.Visible = true;
-
-                //hides the notes for the thrid lvl
-                noteBox3.Visible = false;
-                noteBox32.Visible = false;
-                noteBox33.Visible = false;
-                noteBox34.Visible = false;
-
-                //hide the notes for the fourth lvl
-                noteBox4.Visible = false;
-                noteBox42.Visible = false;
-                noteBox43.Visible = false;
-                noteBox44.Visible = false;
 
                 //hide and show the stars that needs to be shown 
                 star1Level1.Visible = false;
@@ -450,9 +410,6 @@ namespace MusicTable2._0
             }
             if (setLvl == 3)
             {
-                ////hide the notes for the first lvl
-                noteBox.Visible = false;
-
                 //hides the note from second lvl
                 noteBox2.Visible = false;
                 noteBox22.Visible = false;
@@ -462,12 +419,6 @@ namespace MusicTable2._0
                 noteBox32.Visible = true;
                 noteBox33.Visible = true;
                 noteBox34.Visible = true;
-
-                //hide the notes for the fourth lvl
-                noteBox4.Visible = false;
-                noteBox42.Visible = false;
-                noteBox43.Visible = false;
-                noteBox44.Visible = false;
 
                 //hide and show the stars that needs to be shown 
                 star1Level1.Visible = false;
@@ -483,23 +434,16 @@ namespace MusicTable2._0
                 star2Level4.Visible = false;
                 star3Level4.Visible = false;
 
-                noteBox3.Location = new Point(collum[0] + 20, row[randomRow] - 185);
+                noteBox3.Location = new Point(collum[0] + 20, row[randomRow4] - 185);
     
-                noteBox32.Location = new Point(collum[1] + 20, row[randomRow2] - 185);
+                noteBox32.Location = new Point(collum[1] + 20, row[randomRow3] - 185);
               
-                noteBox33.Location = new Point(collum[2] + 20, row[randomRow3] - 185);
+                noteBox33.Location = new Point(collum[2] + 20, row[randomRow2] - 185);
             
-                noteBox34.Location = new Point(collum[3] + 20, row[randomRow4] - 185);
+                noteBox34.Location = new Point(collum[3] + 20, row[randomRow] - 185);
             }
             if (setLvl == 4)
             {
-                ////hide the notes for the first lvl
-                noteBox.Visible = false;
-
-                //hides the note from second lvl
-                noteBox2.Visible = false;
-                noteBox22.Visible = false;
-
                 //hides the notes for the thrid lvl
                 noteBox3.Visible = false;
                 noteBox32.Visible = false;
@@ -526,13 +470,10 @@ namespace MusicTable2._0
                 star2Level4.Visible = true;
                 star3Level4.Visible = true;
 
-                noteBox4.Location = new Point(collum[0] + 25, row[randomRow] - 187);
-             
-                noteBox42.Location = new Point(collum[1] + 25, row[randomRow2] - 187);
-               
-                noteBox43.Location = new Point(collum[2] + 25, row[randomRow3] - 187);
-              
-                noteBox44.Location = new Point(collum[3] + 25, row[randomRow4] - 187);
+                noteBox4.Location = new Point(collum[0] + 25, row[randomRow4] - 187);
+                noteBox42.Location = new Point(collum[1] + 25, row[randomRow3] - 187);
+                noteBox43.Location = new Point(collum[2] + 25, row[randomRow2] - 187);
+                noteBox44.Location = new Point(collum[3] + 25, row[randomRow] - 187);
             }
 
 
