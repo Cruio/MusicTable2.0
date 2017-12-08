@@ -21,13 +21,6 @@ namespace MusicTable2._0
         [STAThread]
         static void Main()
         {
-            Sound fuck = new Sound();
-            fuck.assignment(0, 1, 1);
-            fuck.assignment(1, 2, 4);
-            fuck.assignment(2, 3, 7);
-            fuck.assignment(3, 4, 9);
-            fuck.startRecord();
-
             Thread t1;
             Detector detector = new Detector();
             t1 = new Thread(() => detector.Looper()); ;
@@ -36,8 +29,6 @@ namespace MusicTable2._0
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new StartScreen());
-
-            
         }
     }
 }
