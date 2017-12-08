@@ -46,7 +46,12 @@ namespace MusicTable2._0
                 Debug.WriteLine(e);
                 return 1;
             }
-            CvInvoke.WaitKey();
+            cap.Read(capture);
+            CvInvoke.NamedWindow("source", NamedWindowType.AutoSize);
+            CvInvoke.Imshow("source", capture);
+            CvInvoke.WaitKey(0);
+            System.Threading.Thread.Sleep(1000);
+            cap.Read(capture);
             //Check if camera is opened. If not, exit the looper with code 2.
             if (!cap.IsOpened) return 2;
             int counter = 0;
@@ -173,6 +178,7 @@ namespace MusicTable2._0
                     if (CvInvoke.ArcLength(contours[i], true) > 460 && CvInvoke.ArcLength(contours[i], true) < 600)
                     {
                         noteIndex--;
+                        if (noteIndex >= 0)
                         notes[noteIndex, 0] = 4;
                         noteAmount++;
                         Debug.WriteLine("Eighth!");
@@ -180,7 +186,8 @@ namespace MusicTable2._0
                     else if (CvInvoke.ArcLength(contours[i], true) < 460 && CvInvoke.ArcLength(contours[i], true) > 270)
                     {
                         noteIndex--;
-                        notes[noteIndex, 0] = 3;
+                        if (noteIndex >= 0)
+                            notes[noteIndex, 0] = 3;
                         noteAmount++;
                         Debug.WriteLine("Quarter!");
                     }
@@ -194,7 +201,8 @@ namespace MusicTable2._0
                         && CvInvoke.ArcLength(contours[i], true) < 220)
                     {
                         noteIndex--;
-                        notes[noteIndex, 0] = 1;
+                        if (noteIndex >= 0)
+                            notes[noteIndex, 0] = 1;
                         noteAmount++;
 
                         Debug.WriteLine("Whole!");
@@ -203,7 +211,8 @@ namespace MusicTable2._0
                     else if (CvInvoke.ArcLength(contours[i], true) > 250)
                     {
                         noteIndex--;
-                        notes[noteIndex, 0] = 2;
+                        if (noteIndex >= 0)
+                            notes[noteIndex, 0] = 2;
                         noteAmount++;
                         noteIndex--;
                         Debug.WriteLine("Half!");
@@ -241,10 +250,7 @@ namespace MusicTable2._0
                 int y = (int)keyPoints[i].Point.Y;
                 
                 int firstYContainer = firstY;
-                if (reqNoteType == 3 || reqNoteType == 4)
-                {
-                    x += 21;
-                }
+               if (reqNoteType == 3 || reqNoteType == 4) x += 21;
                 int cols = 0;
                 //Using a double while loop to go through all the columns and rows.
                 while (cols < 4)
@@ -413,7 +419,7 @@ namespace MusicTable2._0
             }
             firstX = lowestX;
             firstY = lowestY;
-            line = (highestX - lowestX) / 15;
+            line = (highestX - lowestX) / 13;
             space = (highestX - lowestX - line * 5) / 4;
             colWidth = (highestY - lowestY) / 4;
             coordsLocked = true;
