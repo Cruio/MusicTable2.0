@@ -33,6 +33,7 @@ namespace MusicTable2._0
         int firstX = 100;
         Size size = new Size(2, 2);
         Point point = new Point(1, 1);
+
         public int Looper()
         {
             VideoCapture cap;
@@ -122,15 +123,15 @@ namespace MusicTable2._0
             Console.WriteLine("I'm here!");
             //notes contains information about the type of note, which is necessary to properly identify the note.
             //If notes[i,0] is equal to 0, there is no note for that index.
-            notes = new int[4, 1];
-            notes[0, 0] = 0;
-            notes[1, 0] = 0;
-            notes[2, 0] = 0;
-            notes[3, 0] = 0;
+            //notes = new int[4, 1];
+            //notes[0, 0] = 0;
+            //notes[1, 0] = 0;
+            //notes[2, 0] = 0;
+            //notes[3, 0] = 0;
             //noteIndex starts at 4 and counts down for every note detected.
-            int noteIndex = 4;
-            Mat blobDetectMat = new Mat();
-            VectorOfKeyPoint keyPoints;
+            //int noteIndex = 4;
+            //Mat blobDetectMat = new Mat();
+            //VectorOfKeyPoint keyPoints;
             //Find contours.
             CvInvoke.FindContours(capture, contours, hierarchy, RetrType.Tree, 
                 ChainApproxMethod.ChainApproxSimple, new Point(0, 0));
@@ -143,7 +144,7 @@ namespace MusicTable2._0
                 requiredCols = new int[1] { 3 };
                 reqNoteType = 1;
                 reqNoteAmount = 1;
-                blobDetectMat = capture;
+                //blobDetectMat = capture;
 
             }
             else if (StartScreen.gameForm.controlValue >= 3 && StartScreen.gameForm.controlValue <= 5)
@@ -151,7 +152,7 @@ namespace MusicTable2._0
                 requiredCols = new int[2] { 3, 1 };
                 reqNoteType = 2;
                 reqNoteAmount = 2;
-                blobDetectMat = capture;
+                //blobDetectMat = capture;
             }
             else if (StartScreen.gameForm.controlValue >= 6 && StartScreen.gameForm.controlValue <= 8)
             {
@@ -165,92 +166,100 @@ namespace MusicTable2._0
                 reqNoteType = 4;
                 reqNoteAmount = 4;
             }
+            Notes[] note = new Notes[contours.Size];
             //for loop to go through all the contours and identify what kind of note it is.
             for (int i = 0; i < contours.Size; i++)
             {
-                Debug.WriteLine(GetHierarchy(hierarchy, i));
-                //Uses the CheckChild(int) method to check for child contours.
-                if (!CheckChild(i))
-                {
-                    Debug.WriteLine(CvInvoke.ContourArea(contours[i]));
-                    Debug.WriteLine(CvInvoke.ArcLength(contours[i], true));
+                
+                note[i] = new Notes(contours[i], capture, CheckChild(i), colWidth);
+                
+            //    Debug.WriteLine(GetHierarchy(hierarchy, i));
+            //    //Uses the CheckChild(int) method to check for child contours.
+            //    if (!CheckChild(i))
+            //    {
+            //        Debug.WriteLine(CvInvoke.ContourArea(contours[i]));
+            //        Debug.WriteLine(CvInvoke.ArcLength(contours[i], true));
 
-                    if (CvInvoke.ArcLength(contours[i], true) > 460 && CvInvoke.ArcLength(contours[i], true) < 600)
-                    {
-                        noteIndex--;
-                        if (noteIndex >= 0)
-                        notes[noteIndex, 0] = 4;
-                        noteAmount++;
-                        Debug.WriteLine("Eighth!");
-                    }
-                    else if (CvInvoke.ArcLength(contours[i], true) < 460 && CvInvoke.ArcLength(contours[i], true) > 270)
-                    {
-                        noteIndex--;
-                        if (noteIndex >= 0)
-                            notes[noteIndex, 0] = 3;
-                        noteAmount++;
-                        Debug.WriteLine("Quarter!");
-                    }
-                    Debug.WriteLine("No child!");
-                }
-                else if (CheckChild(i))
-                {
-                    Debug.WriteLine(CvInvoke.ContourArea(contours[i]));
-                    Debug.WriteLine(CvInvoke.ArcLength(contours[i], true));
-                    if (CvInvoke.ContourArea(contours[i]) > 1200 && CvInvoke.ContourArea(contours[i]) < 2600 
-                        && CvInvoke.ArcLength(contours[i], true) < 220)
-                    {
-                        noteIndex--;
-                        if (noteIndex >= 0)
-                            notes[noteIndex, 0] = 1;
-                        noteAmount++;
+            //        if (CvInvoke.ArcLength(contours[i], true) > 460 && CvInvoke.ArcLength(contours[i], true) < 600)
+            //        {
+            //            noteIndex--;
+            //            if (noteIndex >= 0)
+            //            notes[noteIndex, 0] = 4;
+            //            noteAmount++;
+            //            Debug.WriteLine("Eighth!");
+            //        }
+            //        else if (CvInvoke.ArcLength(contours[i], true) < 460 && CvInvoke.ArcLength(contours[i], true) > 270)
+            //        {
+            //            noteIndex--;
+            //            if (noteIndex >= 0)
+            //                notes[noteIndex, 0] = 3;
+            //            noteAmount++;
+            //            Debug.WriteLine("Quarter!");
+            //        }
+            //        Debug.WriteLine("No child!");
+            //    }
+            //    else if (CheckChild(i))
+            //    {
+            //        Debug.WriteLine(CvInvoke.ContourArea(contours[i]));
+            //        Debug.WriteLine(CvInvoke.ArcLength(contours[i], true));
+            //        if (CvInvoke.ContourArea(contours[i]) > 1200 && CvInvoke.ContourArea(contours[i]) < 2600 
+            //            && CvInvoke.ArcLength(contours[i], true) < 220)
+            //        {
+            //            noteIndex--;
+            //            if (noteIndex >= 0)
+            //                notes[noteIndex, 0] = 1;
+            //            noteAmount++;
 
-                        Debug.WriteLine("Whole!");
+            //            Debug.WriteLine("Whole!");
 
-                    }
-                    else if (CvInvoke.ArcLength(contours[i], true) > 250)
-                    {
-                        noteIndex--;
-                        if (noteIndex >= 0)
-                            notes[noteIndex, 0] = 2;
-                        noteAmount++;
-                        noteIndex--;
-                        Debug.WriteLine("Half!");
+            //        }
+            //        else if (CvInvoke.ArcLength(contours[i], true) > 250)
+            //        {
+            //            noteIndex--;
+            //            if (noteIndex >= 0)
+            //                notes[noteIndex, 0] = 2;
+            //            noteAmount++;
+            //            noteIndex--;
+            //            Debug.WriteLine("Half!");
 
-                    }
-                    Debug.WriteLine("Child!");
-                }
+            //        }
+            //        Debug.WriteLine("Child!");
+            //    }
             }
             //Get variably from the form to check where the notes are supposed to be.
             int correctNoteCounter = 0;
             int[] requiredRow = StartScreen.gameForm.rowPos;
             
-            blobDetectMat = capture;
-            //If it is a quarter or eighth note, it will first erode it with a 
-            //large size and then dilate it to get rid of the stems. It is then inverted.
-            if (reqNoteType == 3 || reqNoteType == 4)
-            {
-                CvInvoke.Erode(capture, blobDetectMat, 
-                    CvInvoke.GetStructuringElement(ElementShape.Cross, new Size(27, 27), new Point(13, 13)), 
-                    new Point(1, 1), 1, BorderType.Default, new MCvScalar(1));
-                CvInvoke.Dilate(capture, blobDetectMat, 
-                    CvInvoke.GetStructuringElement(ElementShape.Ellipse, new Size(27, 27), new Point(13, 13)), 
-                    new Point(1, 1), 1, BorderType.Default, new MCvScalar(1));
-                CvInvoke.BitwiseNot(capture, blobDetectMat);
-            }
-            //Detecting blobs and displaying keypoints.
-            keyPoints = new VectorOfKeyPoint(detector.Detect(blobDetectMat));
-            Features2DToolbox.DrawKeypoints(blobDetectMat, keyPoints, captureWithKeypoints, new Bgr(0, 0, 255));
-            CvInvoke.NamedWindow("KeyPoints2", NamedWindowType.AutoSize);
-            CvInvoke.Imshow("KeyPoints2", captureWithKeypoints);
+            //blobDetectMat = capture;
+            ////If it is a quarter or eighth note, it will first erode it with a 
+            ////large size and then dilate it to get rid of the stems. It is then inverted.
+            //if (reqNoteType == 3 || reqNoteType == 4)
+            //{
+            //    CvInvoke.Erode(capture, blobDetectMat, 
+            //        CvInvoke.GetStructuringElement(ElementShape.Cross, new Size(27, 27), new Point(13, 13)), 
+            //        new Point(1, 1), 1, BorderType.Default, new MCvScalar(1));
+            //    CvInvoke.Dilate(capture, blobDetectMat, 
+            //        CvInvoke.GetStructuringElement(ElementShape.Ellipse, new Size(27, 27), new Point(13, 13)), 
+            //        new Point(1, 1), 1, BorderType.Default, new MCvScalar(1));
+            //    CvInvoke.BitwiseNot(capture, blobDetectMat);
+            //}
+            ////Detecting blobs and displaying keypoints.
+            //keyPoints = new VectorOfKeyPoint(detector.Detect(blobDetectMat));
+            //Features2DToolbox.DrawKeypoints(blobDetectMat, keyPoints, captureWithKeypoints, new Bgr(0, 0, 255));
+            //CvInvoke.NamedWindow("KeyPoints2", NamedWindowType.AutoSize);
+            //CvInvoke.Imshow("KeyPoints2", captureWithKeypoints);
             //Looping through the keypoints to see whether they're in the right position
-            for (int i = 0; i < keyPoints.Size; i++)
+            for (int i = 0; i < note.Length; i++)
             {
-                int x = (int)keyPoints[i].Point.X;
-                int y = (int)keyPoints[i].Point.Y;
-                
+                int x = (int)note[i].Location.X;
+                int y = (int)note[i].Location.Y;
+                noteAmount = 0;
+                for (int j =0; j < note.Length; j++)
+                {
+                    if (note[j].IsNote) noteAmount++;
+                }
                 int firstYContainer = firstY;
-               if (reqNoteType == 3 || reqNoteType == 4) x += 21;
+                if (note[i].NoteType > 2) x += 21;
                 int cols = 0;
                 //Using a double while loop to go through all the columns and rows.
                 while (cols < 4)
@@ -286,12 +295,12 @@ namespace MusicTable2._0
                                 {
                                     //Checking if the note matches all the criteria. 
                                     //Send values to the Sound class if so, and add 1 to the correct note counter.
-                                    if (cols == requiredCols[j] 
-                                        && (rows == requiredRow[cols]) 
-                                        && notes[cols, 0] == reqNoteType && noteAmount == reqNoteAmount)
+                                    if (note[i].IsNote && cols == requiredCols[j] 
+                                        && rows == requiredRow[cols] 
+                                        && note[i].NoteType == reqNoteType && noteAmount == reqNoteAmount)
                                     {
                                         Debug.WriteLine("Correct position and type!");
-                                        sound.playOrder[cols, 0] = notes[cols, 0];
+                                        sound.playOrder[cols, 0] = note[i].NoteType;
                                         sound.playOrder[cols, 1] = rows+1;
                                         correctNoteCounter++;
                                     }
@@ -307,12 +316,12 @@ namespace MusicTable2._0
                                 Debug.WriteLine("There's a note here:" + rows + " " + cols);
                                 for (int j = 0; j < requiredCols.Length; j++)
                                 {
-                                    if (cols == requiredCols[j] 
-                                        && (rows == requiredRow[cols]) 
-                                        && notes[cols, 0] == reqNoteType && noteAmount == reqNoteAmount)
+                                    if (note[i].IsNote && cols == requiredCols[j]
+                                        && rows == requiredRow[cols]
+                                        && note[i].NoteType == reqNoteType && noteAmount == reqNoteAmount)
                                     {
                                         Debug.WriteLine("Correct position and type!");
-                                        sound.playOrder[cols, 0] = notes[cols, 0];
+                                        sound.playOrder[cols, 0] = note[i].NoteType;
                                         sound.playOrder[cols, 1] = rows+1;
                                         correctNoteCounter++;
                                     }
