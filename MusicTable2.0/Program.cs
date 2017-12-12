@@ -21,12 +21,12 @@ namespace MusicTable2._0
         [STAThread]
         static void Main()
         {
-            Sound fuck = new Sound();
-            fuck.assignment(0, 1, 1);
-            fuck.assignment(1, 2, 4);
-            fuck.assignment(2, 3, 7);
-            fuck.assignment(3, 4, 9);
-            fuck.startRecord();
+            Sound intro = new Sound();
+            intro.assignment(0, 1, 9);
+            intro.assignment(1, 3, 5);
+            intro.assignment(2, 4, 3);
+            intro.assignment(3, 3, 7);
+            intro.startRecord();
 
             Thread t1;
             Detector detector = new Detector();

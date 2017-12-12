@@ -64,31 +64,31 @@ namespace MusicTable2._0
                 switch (pitch)
                 {
                     case 1:
-                        builder.Data1 = 60;
-                        break;
-                    case 2:
-                        builder.Data1 = 62;
-                        break;
-                    case 3:
                         builder.Data1 = 64;
                         break;
-                    case 4:
+                    case 2:
                         builder.Data1 = 65;
                         break;
-                    case 5:
+                    case 3:
                         builder.Data1 = 67;
                         break;
-                    case 6:
+                    case 4:
                         builder.Data1 = 69;
                         break;
-                    case 7:
+                    case 5:
                         builder.Data1 = 71;
                         break;
-                    case 8:
+                    case 6:
                         builder.Data1 = 72;
                         break;
-                    case 9:
+                    case 7:
                         builder.Data1 = 74;
+                        break;
+                    case 8:
+                        builder.Data1 = 76;
+                        break;
+                    case 9:
+                        builder.Data1 = 77;
                         break;
                     default:
                     //if no pitch has been assigned, the volume is lowered to 0, so as not to play any sound.
@@ -114,7 +114,10 @@ namespace MusicTable2._0
                         checkSound(playOrder[i, 0], playOrder[i, 1]);
 
                         builder.Build();
+                        //Changing instrument. Simply change the last int value in the following line. 0 for normal piano. Maximum is 127.
+                        //outDevice.Send(new ChannelMessage(ChannelCommand.ProgramChange, 0, 9));
                         outDevice.Send(builder.Result);
+
 
                         Thread.Sleep(2000 / duration);
 
