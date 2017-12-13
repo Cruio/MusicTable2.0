@@ -40,7 +40,7 @@ namespace MusicTable2._0
             //Try to initialise the VideoCapture with the default camera. Catches NullReferenceException
             try
             {
-                cap = new VideoCapture(0);
+                cap = new VideoCapture(2);
             }
             catch (NullReferenceException e)
             {

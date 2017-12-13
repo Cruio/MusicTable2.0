@@ -7,8 +7,6 @@ using System.Media;
 using System.Threading;
 using Sanford.Multimedia.Midi;
 
-
-
 namespace MusicTable2._0
 {
     class Sound
@@ -24,11 +22,10 @@ namespace MusicTable2._0
         int duration;
 
         //playOrder is used to store the desired pitch and shape of a note. 
-
         public int[,] playOrder = new int[4, 2];
 
-        //startRecord is the function that starts playing sounds. If loopchecker = 0, that is no sound is currently being played, it initializes a new thread and makes it run
-        //the function grammophone. It then starts said thread.
+        //startRecord is the function that starts playing sounds. If loopchecker = 0, that is no sound is currently being played, 
+        //it initializes a new thread and makes it run the function grammophone. It then starts said thread.
         public void startRecord()
         {
             if (loopchecker == 0)
@@ -37,13 +34,11 @@ namespace MusicTable2._0
                 wavPlayer.Start();
             }
         }
-
         //checkSound assigns the desired values to the ChannelMessageBuilder object named builder.
         public void checkSound(int shape, int pitch)
         {
                 //Data2 is the volume of the sound, with 127 being maximum.
                 builder.Data2 = 127;
-
                 if (shape == 1)
                 {
                     duration = 1;
@@ -65,36 +60,35 @@ namespace MusicTable2._0
                 duration = 2000;
                 }
 
-
                 //Data1 is the pitch of the sound.
                 switch (pitch)
                 {
                     case 1:
-                        builder.Data1 = 60;
-                        break;
-                    case 2:
-                        builder.Data1 = 62;
-                        break;
-                    case 3:
                         builder.Data1 = 64;
                         break;
-                    case 4:
+                    case 2:
                         builder.Data1 = 65;
                         break;
-                    case 5:
+                    case 3:
                         builder.Data1 = 67;
                         break;
-                    case 6:
+                    case 4:
                         builder.Data1 = 69;
                         break;
-                    case 7:
+                    case 5:
                         builder.Data1 = 71;
                         break;
-                    case 8:
+                    case 6:
                         builder.Data1 = 72;
                         break;
-                    case 9:
+                    case 7:
                         builder.Data1 = 74;
+                        break;
+                    case 8:
+                        builder.Data1 = 76;
+                        break;
+                    case 9:
+                        builder.Data1 = 77;
                         break;
                     default:
                     //if no pitch has been assigned, the volume is lowered to 0, so as not to play any sound.
@@ -120,7 +114,10 @@ namespace MusicTable2._0
                         checkSound(playOrder[i, 0], playOrder[i, 1]);
 
                         builder.Build();
+                        //Changing instrument. Simply change the last int value in the following line. 0 for normal piano. Maximum is 127.
+                        //outDevice.Send(new ChannelMessage(ChannelCommand.ProgramChange, 0, 9));
                         outDevice.Send(builder.Result);
+
 
                         Thread.Sleep(2000 / duration);
 
