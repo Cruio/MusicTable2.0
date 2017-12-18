@@ -22,7 +22,6 @@ namespace MusicTable2._0
         private SimpleBlobDetector detector = new SimpleBlobDetector();
         private VectorOfVectorOfPoint contours = new VectorOfVectorOfPoint();
         private Mat hierarchy = new Mat();
-        private int[,] notes;
         private int noteAmount = 0;
         private int[] requiredCols;
         bool coordsLocked = false;
