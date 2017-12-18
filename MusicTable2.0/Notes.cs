@@ -27,11 +27,9 @@ namespace MusicTable2._0
         {
             contour = c;
             blobMat = new Mat(mat, new Range(0, mat.Rows), new Range(0, mat.Cols));
-            
             hasChild = cc;
             width = w/2;
             isNote = false;
-            CvInvoke.Imshow("notBlob", blobMat);
             FigureOutWhatNoteItIs();            
         }
 
@@ -69,14 +67,12 @@ namespace MusicTable2._0
                 }
             }
         }
-    
         private PointF GetLocation()
         {
             int x = CvInvoke.BoundingRectangle(contour).Right - CvInvoke.BoundingRectangle(contour).Width / 2;
             int y = CvInvoke.BoundingRectangle(contour).Bottom - CvInvoke.BoundingRectangle(contour).Height / 2;
             PointF p = new PointF(x,y);
             Mat usefulMat = new Mat();
-            //CvInvoke.Imshow("notBlob", blobMat);
             if (noteType > 2)
             {
                 CvInvoke.Erode(blobMat, usefulMat,
@@ -89,9 +85,6 @@ namespace MusicTable2._0
             }
             else usefulMat = blobMat;
             VectorOfKeyPoint keyPoints = new VectorOfKeyPoint(detector.Detect(usefulMat));
-            //Mat captureWithKeypoints = new Mat();
-            //Features2DToolbox.DrawKeypoints(usefulMat, keyPoints, captureWithKeypoints, new Bgr(0, 0, 255));
-            //CvInvoke.Imshow("blob", captureWithKeypoints);
             for (int i = 0; i < keyPoints.Size; i++)
             {
                 if (keyPoints[i].Point.Y - width < p.Y && keyPoints[i].Point.Y + width > p.Y)
@@ -106,6 +99,5 @@ namespace MusicTable2._0
         public PointF Location { get => location; set => location = value; }
         public int NoteType { get => noteType; set => noteType = value; }
         public bool IsNote { get => isNote; set => isNote = value; }
-        
     }
 }
